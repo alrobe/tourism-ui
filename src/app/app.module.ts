@@ -4,15 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PaqueteTuristicoComponent } from './components/paquete-turistico/paquete-turistico.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+
+//rutas
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaqueteTuristicoComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
