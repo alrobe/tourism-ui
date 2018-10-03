@@ -6,7 +6,7 @@ import { PaqueteTuristicoComponent } from './components/paquete-turistico/paquet
 
 const routes:Routes=[
     { path: 'home', component: HomeComponent },
-    { path: 'paquetesTuristicos', component: PaqueteTuristicoComponent },
+    { path: 'paqueteTuristico', component: PaqueteTuristicoComponent },
     { path: '**', pathMatch:'full', redirectTo:'home'},
 
 ];

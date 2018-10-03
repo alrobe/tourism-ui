@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TurismoService, Paquete } from '../../servicios/turismo.service';
 
 @Component({
   selector: 'app-paquete-turistico',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaqueteTuristicoComponent implements OnInit {
 
-  constructor() { }
+
+  paquete:Paquete;
+  constructor(private _turismoService:TurismoService) { }
 
   ngOnInit() {
+    this.paquete=this._turismoService.getPaquete();
   }
+
+
 
 }
