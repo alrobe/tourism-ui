@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Paquete } from '../../../model/agency';
 //import { TurismoService, Paquete } from '../../servicios/turismo.service';
 
 @Component({
@@ -19,3 +20,4 @@ export class PaqueteTuristicoComponent implements OnInit {
 
 
 }
+
