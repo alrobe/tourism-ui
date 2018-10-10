@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Paquete } from '../../../model/agency';
-//import { TurismoService, Paquete } from '../../servicios/turismo.service';
-
+import { AgencyService } from '../../../services/agency.service';
+import { Observer, observable } from 'rxjs';
 @Component({
   selector: 'app-paquete-turistico',
   templateUrl: './paquete-turistico.component.html',
@@ -11,10 +11,21 @@ export class PaqueteTuristicoComponent implements OnInit {
 
 
   paquete:Paquete;
-  constructor() { }
-  //private _turismoService:TurismoService
+  constructor(private _turismoService:AgencyService) { }
   ngOnInit() {
-    //this.paquete=this._turismoService.getPaquete();
+    let observador:Observer<Paquete>={
+      next: (data) => {
+        console.log(data)
+        this.paquete=data;
+      },
+      error: (error) => {
+        console.log('se produjo el siguiente error al recuperar un paquete');
+      },
+      complete: () => {
+        console.log('proceso finalizado');
+      }
+    };
+    this._turismoService.getPaquete(1).subscribe(observador);
   }
 
 
