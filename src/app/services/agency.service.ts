@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Paquete } from '../model/packages';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL_PACKAGES='http://localhost:8080/packages';
+import { Agency } from './../model/agency';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AgencyService {
- 
-  constructor(private httpClient:HttpClient) { }
 
-  getPaquete(id:number):Observable<Paquete>{
-    return this.httpClient.get<Paquete>(`${API_URL_PACKAGES}/${id}`);
+baseUrl: string = 'http://localhost:8080/agency';
+
+  constructor(private http: HttpClient) {
   }
-  
+
+  createAgency(agency: Agency){
+      return this.http.post(this.baseUrl, agency);
+  }
 }
