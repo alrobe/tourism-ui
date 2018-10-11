@@ -11,13 +11,13 @@ export class PaqueteTuristicoComponent implements OnInit {
 
 
   paquete:Paquete;
-  paquete1:Paquete;
+
   constructor(private _turismoService:AgencyService) { }
   ngOnInit() {
     let observador:Observer<Paquete>={
       next: (data) => {
         console.log(data);
-        this.paquete1=data;
+        this.paquete=data;
       },
       error: (error) => {
         console.log(error);
@@ -31,6 +31,6 @@ export class PaqueteTuristicoComponent implements OnInit {
     .subscribe(observador);
   }
   imprimir(){
-    console.log(this.paquete1);
+    console.log(this.paquete);
   }
 }

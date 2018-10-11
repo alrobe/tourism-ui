@@ -9,22 +9,16 @@
     </div>
 </div> -->
 <div>
-    <div class="card mb-3">
+    <div class="card mb-3" *ngIf="paquete">
         <img class="card-img-top" src="" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Turismo Cochabamba</h5>
+            <h5 class="card-title">{{paquete.name}}</h5>
             <p class="card-text" (click)="imprimir()">
-                turismo cochabamba cbbaPor su clima agradable, Cochabamba es reconocida como la ciudad de la “eterna primavera”. Cochabamba es considerada la “capital de los valles” y se encuentra ubicada a 2570 msnm. La ciudad muy activa, con muchos parques y atractivos
-                turísticos. Cómo llegar a Cochabamba Cochabamba se encuentra en el centro de Bolivia, por tal razón es fácil llegar por carretera desde cualquier punto cardinal. Además cuenta con un aeropuerto importante que comunica Cochabamba con las
-                principales ciudades del país. Tiempo de viaje en bus desde Cochabamba: La Paz 7 horas, Oruro 4 horas, Santa Cruz 10 horas, Potosí 10 horas, Villa Tunari 3 horas, Puerto Villarroel 7 horas. La Terminal de Buses de Cochabamba cuenta con
-                muchos servicios: restaurante, teléfono, internet, guarda equiaje. Visita a la Ciudad de Cochabamba Cochabamba es una ciudad pujante muy desarrollada y comercial, que mezcla la arquitectura moderna con antiguos edificios muchos de ellos
-                alrededor de la plaza principal de la ciudad: Plaza 14 de septiembre. Entre las construcciones más importantes se destacan: Catedral Metropolitana de Cochabamba La contrucción de la Catedral se inicio en el año 1701. Conserva muchos elementos
-                del arte sacro colonial. viaje cochabamba Turismo en Cochabamba Pasaje Catedral Es una pasaje colonial ubicado detrás de la Catedral Metropolitana, en el pasaje se destaca una fuente de agua, el lugar es utilizado para eventos culturales
-                y una galería de arte. Palacio Portales Fue construido por el "barón del estaño" Simón Iturri Patiño como residencia personal entre los años 1915 y 1925. Para la construcción se importó casi todos los materiales desde el exterior y se
-                utilizó los materiales más finos de la historia. Hoy funciona como centro cultural donde se realizan diferentes manifestaciones artísticas. El Palacio está ubicado en el barrio Queru Queru. Cristo de la Concordia Es monumento más famoso
-                de Cochabamba, todo un símbolo de la ciudad y el atractivo más visitado por los turistas. El Cristo se construyo con hormigón armado en el año 1989 y tiene una altura de 33,40 m. (se dice que es el más alto del mundo). Fue obra de César
-                y Walter Terrazas Pardo. El Cristo de ubica sobre la cima del cerro San Pedro de donde se obtiene una excelente vista de la ciudad. Para llegar al cristo se recomienda tomar el servicio de Teleférico Panorámico. Horario: 9.00 a 17.00 hs.</p>
-            <p class="card-text"><small class="text-muted">{{paquete1 | json}}</small></p>
+                Fue obra de César y Walter Terrazas Pardo. El Cristo de ubica sobre la cima del cerro San Pedro de donde se obtiene una excelente vista de la ciudad. Para llegar al cristo se recomienda tomar el servicio de Teleférico Panorámico. Horario: 9.00 a 17.00
+                hs.
+            </p>
+            <p>{{paquete.description}}</p>
+            <p class="card-text"><small class="text-muted">{{paquete.inversion}}</small></p>
         </div>
     </div>
 
