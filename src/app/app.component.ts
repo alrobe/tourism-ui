@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { from } from 'rxjs';
+
 //agencia
-import {Agencia} from './modelAgencia/angencia.model'
+import {Agency} from './model/agency';
 
 //service
-import { AgenciaService } from './agencia.service';
+import { AgencyService } from './services/agency.service';
+
 
 @Component({
   selector: 'app-root',
@@ -13,8 +16,9 @@ import { AgenciaService } from './agencia.service';
 export class AppComponent {
   title = 'tourism-ui';
 
-  constructor ( agenciaService: AgenciaService){
-
+  constructor (private agencyService: AgencyService){
   }
 
 }
+
+
