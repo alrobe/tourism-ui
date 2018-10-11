@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Paquete } from '../../../model/agency';
+import { Paquete } from '../../../model/packages';
 import { AgencyService } from '../../../services/agency.service';
 import { Observer} from 'rxjs';
 @Component({
