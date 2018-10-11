@@ -5,5 +5,6 @@ export interface Paquete{
     description     :string,
     keywords        :string,
     inversion	      :number,
-    _links?:string
+    _links?           :string,
+    id?                :number,
     }
