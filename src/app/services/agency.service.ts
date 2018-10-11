@@ -13,7 +13,7 @@ baseUrl: string = 'http://localhost:8080/agency';
   constructor(private http: HttpClient) {
   }
 
-   createAgency(agency: Agency){
+  createAgency(agency: Agency){
       return this.http.post(this.baseUrl, agency);
   }
 }
