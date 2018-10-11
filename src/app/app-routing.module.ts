@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component'
 
 const routes: Routes = [
   {
@@ -10,7 +11,13 @@ const routes: Routes = [
   {
     path: 'agency',
     loadChildren: './pages/agency/agency.module#AgencyModule'
-  }
+  },
+  {
+    path: 'tourist-destiny',
+    children: [
+      { path: 'create', component: CreateDestinyComponent}
+    ]
+  },
 ]
 
 @NgModule({
