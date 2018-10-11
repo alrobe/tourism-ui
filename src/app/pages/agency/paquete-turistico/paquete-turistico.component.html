@@ -1,0 +1,25 @@
+<!-- <div *ngIf="paquete">
+    <div class="card mb-3">
+        <img class="card-img-top" src="{{paquete.fotos}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{paquete.nombre}}</h5>
+            <p class="card-text">{{paquete.descripcion}}</p>
+            <p class="card-text"><small class="text-muted">{{paquete.calificaciones}}</small></p>
+        </div>
+    </div>
+</div> -->
+<div>
+    <div class="card mb-3" *ngIf="paquete">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{paquete.name}}</h5>
+            <p class="card-text" (click)="imprimir()">
+                Fue obra de César y Walter Terrazas Pardo. El Cristo de ubica sobre la cima del cerro San Pedro de donde se obtiene una excelente vista de la ciudad. Para llegar al cristo se recomienda tomar el servicio de Teleférico Panorámico. Horario: 9.00 a 17.00
+                hs.
+            </p>
+            <p>{{paquete.description}}</p>
+            <p class="card-text"><small class="text-muted">{{paquete.inversion}}</small></p>
+        </div>
+    </div>
+
+</div>
