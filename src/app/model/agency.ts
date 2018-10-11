@@ -1,9 +1,10 @@
-export interface Paquete{
-  minimunGroup    :number,
-  categoryId      :number,
-  name	          :string,
-  description     :string,
-  keywords        :string,
-  inversion	      :number,
-  _links?:string
-  }
+import {Person} from './person'
+
+export class Agency{
+    nameAgency: string;
+    adress    : string;
+    mail      : string;
+    telf      : string;
+    webPage   : string;
+    person    : Person;
+}
