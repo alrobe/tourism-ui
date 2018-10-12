@@ -14,11 +14,11 @@ export class TouristDestinyService{
     }
 
     updateDestiny(destiny: TouristDestiny){
-        return this.http.put(this.baseUrl + '/', destiny);
+        return this.http.put(this.baseUrl + '/' + destiny.id, destiny);
     }
 
-    deleteDestiny(){
-        return this.http.delete(this.baseUrl)
+    deleteDestiny(id: String){
+        return this.http.delete(this.baseUrl+'/'+id);
     }
 }
 
