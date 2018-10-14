@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PackagesService } from '../../../services/packages.service';
 import { Paquete } from '../../../model/packages';
 import { Observer } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-paquetes-buscados',
@@ -10,16 +11,31 @@ import { Observer } from 'rxjs';
 })
 export class PaquetesBuscadosComponent implements OnInit {
 
-  paquetes:Paquete[];
   paquetesBuscados:Paquete[]=[];
-  constructor(private _turismoServicios:PackagesService) { }
-
+  termino:string;
+  constructor(private _activatedRouter:ActivatedRoute,private _turismoServicios:PackagesService,private router:Router) { }
 
   ngOnInit() {
+    this._activatedRouter.params.subscribe(
+      params => {
+        this.termino=params['nombre'];
+      }
+    );
     let observador:Observer<Paquete[]>={
       next: (data) => {
-        console.log(data)
-        this.paquetes=data;
+        console.log(data);
+
+        let paquetes:Paquete[]=[];
+        this.termino = this.termino.toLocaleLowerCase();
+
+        for(let i=0;i<data.length;i++){
+            let nombre = data[i].name.toLocaleLowerCase();
+            if(nombre.indexOf(this.termino)>=0){
+                data[i].id=i;
+                paquetes.push(data[i]);
+            }
+        }
+        this.paquetesBuscados=paquetes;
       },
       error: (error) => {
         console.log('se produjo el siguiente error al repuerar la lista de los paquetes');
@@ -30,21 +46,9 @@ export class PaquetesBuscadosComponent implements OnInit {
   };
   this._turismoServicios.getPaquetes()
   .subscribe(observador);
-  this.buscarPaquete("paquete1");
   }
 
-  buscarPaquete(termino:string){
-    //let paquetesBus:Paquete[]=[];
-
-        termino = termino.toLocaleLowerCase();
-
-        for(let i=0;i<this.paquetes.length;i++){
-            let nombre = this.paquetes[i].name.toLocaleLowerCase();
-            if(nombre.indexOf(termino)>=0){
-                this.paquetes[i].id=i;
-                this.paquetesBuscados.push(this.paquetes[i]);
-            }
-        }
+  verPaquete(index:number){
+    this.router.navigate(['/paqueteTuristico',index])
   }
-
 }

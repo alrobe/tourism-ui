@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
+import { Paquete } from '../../../model/packages';
 
 @Component({
   selector: 'app-tarjeta-paquete',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaPaqueteComponent implements OnInit {
 
+  @Input() paquete:Paquete;
+  @Input() index:number;
   constructor() { }
 
   ngOnInit() {
