@@ -36,7 +36,5 @@ export class PaqueteTuristicoComponent implements OnInit {
     this._turismoService.getPaquete(this.index)
     .subscribe(observador);
   }
-  imprimir(){
-    console.log(this.paquete);
-  }
+
 }
