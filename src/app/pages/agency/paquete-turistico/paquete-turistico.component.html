@@ -10,7 +10,7 @@
 </div> -->
 <div>
     <div class="card mb-3" *ngIf="paquete">
-        <img class="card-img-top" src="" alt="Card image cap">
+        <img class="card-img-top" [src]="paquete.keywords" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{paquete.name}}</h5>
             <p class="card-text" (click)="imprimir()">

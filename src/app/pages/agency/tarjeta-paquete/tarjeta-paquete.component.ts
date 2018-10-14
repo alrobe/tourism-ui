@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
 import { Paquete } from '../../../model/packages';
 
 @Component({
@@ -10,9 +10,16 @@ export class TarjetaPaqueteComponent implements OnInit {
 
   @Input() paquete:Paquete;
   @Input() index:number;
-  constructor() { }
+
+  @Output() paqueteSeleccionado:EventEmitter<number>;
+  constructor() { 
+    this.paqueteSeleccionado=new EventEmitter();
+  }
 
   ngOnInit() {
+  }
+  verPaquete(){
+    this.paqueteSeleccionado.emit(this.index)
   }
 
 }

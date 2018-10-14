@@ -11,5 +11,5 @@
 
 <div class="card-columns">
     <!-- *ngFor="let heroe of heroes;let i=index" -->
-    <app-tarjeta-paquete *ngFor="let paquete of paquetesBuscados" [paquete]="paquete" [index]="paquete.id" (click)="verPaquete(paquete.id)"></app-tarjeta-paquete>
+    <app-tarjeta-paquete (paqueteSeleccionado)="verPaquete($event)" *ngFor="let paquete of paquetesBuscados" [paquete]="paquete" [index]="paquete.id"></app-tarjeta-paquete>
 </div>

@@ -31,7 +31,7 @@ export class PaquetesBuscadosComponent implements OnInit {
         for(let i=0;i<data.length;i++){
             let nombre = data[i].name.toLocaleLowerCase();
             if(nombre.indexOf(this.termino)>=0){
-                data[i].id=i;
+                data[i].id=data[i].categoryId;
                 paquetes.push(data[i]);
             }
         }
@@ -49,6 +49,6 @@ export class PaquetesBuscadosComponent implements OnInit {
   }
 
   verPaquete(index:number){
-    this.router.navigate(['/paqueteTuristico',index])
+    this.router.navigate(['/agency/paqueteTuristico',index])
   }
 }
