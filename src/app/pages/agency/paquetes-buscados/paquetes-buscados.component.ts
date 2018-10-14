@@ -51,4 +51,8 @@ export class PaquetesBuscadosComponent implements OnInit {
   verPaquete(index:number){
     this.router.navigate(['/agency/paqueteTuristico',index])
   }
+
+  buscarPaquete(nombre:string){
+    this.router.navigate(['/agency/paquetesBuscados',nombre])
+  }
 }
