@@ -1,1 +1,31 @@
-hola
+<div class="container">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="agency">
+        <h1 class="display-4">Registrar agencia turistica</h1>
+        <div class="form-group">
+            <label>Nombre de la agncia turistica</label>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label>Telefono</label>
+            <input type="text" class="form-control" formControlName="phone">
+        </div>
+        <div class="form-group">
+            <label>Correo electronico</label>
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label>Pagina web</label>
+            <input type="text" class="form-control" formControlName="webPage">
+        </div>
+        <div class="btn-group float-right" >
+            <button type="submit" class="btn btn-primary" [disabled]="agency.invalid">
+                Guardar
+            </button>
+        </div>
+        <div class="btn-group float-left">
+            <button class="btn btn-danger">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
