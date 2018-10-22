@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'create', component: CreateDestinyComponent}
     ]
   },
-  {path: 'paquetesTuristicos', loadChildren: './pages/tourist-package/tourist-package.module#TouristPackageModule' }
+  { path: 'paquetes', loadChildren: './pages/tourist-package/tourist-package.module#TouristPackageModule' }
 ]
 
 @NgModule({

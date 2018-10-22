@@ -49,10 +49,10 @@ export class PaquetesBuscadosComponent implements OnInit {
   }
 
   verPaquete(index:number){
-    this.router.navigate(['/agency/paqueteTuristico',index])
+    this.router.navigate(['/paquetes/paqueteTuristico',index])
   }
 
   buscarPaquete(nombre:string){
-    this.router.navigate(['/agency/paquetesBuscados',nombre])
+    this.router.navigate(['/paquetes/paquetesBuscados',nombre])
   }
 }
