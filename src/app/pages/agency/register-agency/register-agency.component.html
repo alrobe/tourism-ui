@@ -3,19 +3,98 @@
         <h1 class="display-4">Registrar agencia turistica</h1>
         <div class="form-group">
             <label>Nombre de la agncia turistica</label>
-            <input type="text" class="form-control" formControlName="name">
+            <input type="text" class="form-control" formControlName="agencyName">
+            <div *ngIf="agency.controls.agencyName.invalid 
+            && (agency.controls.agencyName.dirty || agency.controls.agencyName.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.agencyName.errors.required">
+                    El nombre es requerido.
+                </p>
+            </div>
         </div>
         <div class="form-group">
             <label>Telefono</label>
-            <input type="text" class="form-control" formControlName="phone">
+            <input type="text" class="form-control" formControlName="agencyPhone">
+            <div *ngIf="agency.controls.agencyPhone.invalid 
+            && (agency.controls.agencyPhone.dirty || agency.controls.agencyPhone.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.agencyPhone.errors.required"> 
+                    El telefono es requerido.
+                </p>
+            </div>
         </div>
         <div class="form-group">
             <label>Correo electronico</label>
-            <input type="text" class="form-control" formControlName="email">
+            <input type="text" class="form-control" formControlName="agencyEmail">
+            <div *ngIf="agency.controls.agencyEmail.invalid 
+            && (agency.controls.agencyEmail.dirty || agency.controls.agencyEmail.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.agencyEmail.errors.required"> 
+                    El email es requerido.
+                </p>
+                <p *ngIf="agency.controls.agencyEmail.errors.email"> 
+                    El correo electronico es invalido.
+                </p>
+            </div>
         </div>
         <div class="form-group">
             <label>Pagina web</label>
-            <input type="text" class="form-control" formControlName="webPage">
+            <input type="text" class="form-control" formControlName="agencyWebPage">
+            <div *ngIf="agency.controls.agencyWebPage.invalid 
+            && (agency.controls.agencyWebPage.dirty || agency.controls.agencyWebPage.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.agencyWebPage.errors.required"> 
+                    La pagina web es requerida. 
+                </p>
+            </div>
+        </div>
+        <p class="h3">Datos del representante</p>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" formControlName="representativeName">
+            <div *ngIf="agency.controls.representativeName.invalid 
+            && (agency.controls.representativeName.dirty || agency.controls.representativeName.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.representativeName.errors.required"> 
+                    El nombre es requerido.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" class="form-control" formControlName="representativeLastName">
+            <div *ngIf="agency.controls.representativeLastName.invalid 
+            && (agency.controls.representativeLastName.dirty || agency.controls.representativeLastName.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.representativeLastName.errors.required"> 
+                    El telefono es requerido.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Correo electronico</label>
+            <input type="text" class="form-control" formControlName="representativeEmail">
+            <div *ngIf="agency.controls.representativeEmail.invalid 
+            && (agency.controls.representativeEmail.dirty || agency.controls.representativeEmail.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.representativeEmail.errors.required"> 
+                    El email es requerido.
+                </p>
+                <p *ngIf="agency.controls.representativeEmail.errors.email"> 
+                    El correo electronico es invalido.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Telefono</label>
+            <input type="text" class="form-control" formControlName="representativePhone">
+            <div *ngIf="agency.controls.representativePhone.invalid 
+            && (agency.controls.representativePhone.dirty || agency.controls.representativePhone.touched)" 
+            class="text-danger">
+                <p *ngIf="agency.controls.representativePhone.errors.required"> 
+                    La pagina web es requerida. 
+                </p>
+            </div>
         </div>
         <div class="btn-group float-right" >
             <button type="submit" class="btn btn-primary" [disabled]="agency.invalid">

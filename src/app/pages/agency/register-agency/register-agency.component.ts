@@ -11,12 +11,18 @@ export class RegisterAgencyComponent implements OnInit {
   agency: FormGroup;
   constructor(private fb: FormBuilder, private agencyService: AgencyService) { }
 
+  get a() { return this.agency.controls; }
+
   ngOnInit() {
     this.agency = this.fb.group({
-      name: ['', [Validators.required]],
-      phone: ['', Validators.required],
-      email: ['', [Validators.required]],
-      webPage: ['', [Validators.required]]
+      agencyName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
+      agencyPhone: ['', Validators.required],
+      agencyEmail: ['', [Validators.required, Validators.email]],
+      agencyWebPage: ['', Validators.required],
+      representativeName: ['', Validators.required],
+      representativeLastName: ['', Validators.required],
+      representativeEmail: ['', [Validators.required, Validators.email]],
+      representativePhone: ['', Validators.required]
     });
   }
 }
