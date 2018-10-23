@@ -14,6 +14,6 @@ baseUrl: string = 'http://localhost:8080/agency';
   }
 
   createAgency(agency: Agency){
-      return this.http.post(this.baseUrl, agency);
+      return this.http.post(this.baseUrl, agency).toPromise();
   }
 }
