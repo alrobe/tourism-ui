@@ -8,9 +8,10 @@ import { Agency } from './../model/agency';
 })
 export class AgencyService {
 
-baseUrl: string = 'http://localhost:8080/agency';
+  baseUrl: string = 'http://localhost:8080/agency';
 
   constructor(private http: HttpClient) {
+    console.log('service working!');
   }
 
   createAgency(agency: Agency){

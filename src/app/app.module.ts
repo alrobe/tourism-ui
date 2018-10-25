@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 
+import { AgencyService } from './services/agency.service';
+import { TouristDestinyService } from './services/touristDestiny.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,7 @@ import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/c
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AgencyService, TouristDestinyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
