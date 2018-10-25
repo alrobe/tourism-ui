@@ -13,6 +13,10 @@ export class TouristDestinyService{
         
     }
 
+    getDestinys(destiny: TouristDestiny){
+        return this.http.get<TouristDestiny[]>(this.baseUrl);
+    }
+
     updateDestiny(destiny: TouristDestiny){
         return this.http.put(this.baseUrl + '/' + destiny.id, destiny);
     }
