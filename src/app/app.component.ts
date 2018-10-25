@@ -9,9 +9,13 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'tourism-ui';
   constructor(private auth:AuthService){
-
+    auth.handleAuthentication();
   }
   login(){
     this.auth.login();
   }
+  salir(){
+    this.auth.logout();
+  }
+
 }
