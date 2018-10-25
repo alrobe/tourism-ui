@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Paquete } from '../../../model/agency';
-import { AgencyService } from '../../../services/agency.service';
+import { Paquete } from '../../../model/packages';
 import { Observer} from 'rxjs';
+import { PackagesService } from '../../../services/packages.service';
 @Component({
   selector: 'app-paquete-turistico',
   templateUrl: './paquete-turistico.component.html',
@@ -12,7 +12,7 @@ export class PaqueteTuristicoComponent implements OnInit {
 
   paquete:Paquete;
 
-  constructor(private _turismoService:AgencyService) { }
+  constructor(private _turismoService:PackagesService) { }
   ngOnInit() {
     let observador:Observer<Paquete>={
       next: (data) => {
