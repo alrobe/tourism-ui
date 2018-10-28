@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component'
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
       { path: 'create', component: CreateDestinyComponent}
     ]
   },
-  { path: 'paquetes', loadChildren: './pages/tourist-package/tourist-package.module#TouristPackageModule' }
+  { path: 'paquetes', loadChildren: './pages/tourist-package/tourist-package.module#TouristPackageModule', canActivate: [AuthGuardService] }
 ]
 
 @NgModule({

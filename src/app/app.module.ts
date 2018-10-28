@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 import { AuthService } from './services/auth.service';
-
+import { AuthGuardService } from './services/auth-guard.service'
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
