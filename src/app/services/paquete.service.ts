@@ -158,6 +158,6 @@ export class PaqueteService {
   }
 
   saveData(paquete: Paquete): Observable<Paquete> {
-    return this.http.post<Paquete>('http://localhost:8080/paquetes', paquete, httpOptions);
+    return this.http.post<Paquete>('http://localhost:8080/paquete', paquete, httpOptions);
   }
 }
