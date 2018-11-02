@@ -1,4 +1,4 @@
 export class Servicio {
-  id: number;
+  id?: number;
   nombre: string;
 }

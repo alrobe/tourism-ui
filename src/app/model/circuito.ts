@@ -1,4 +1,4 @@
 export class Circuito {
-  id: number;
+  id?: number;
   nombre: string;
 }

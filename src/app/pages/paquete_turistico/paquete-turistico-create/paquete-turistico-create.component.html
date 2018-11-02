@@ -1,4 +1,25 @@
+<style>
+  .images-group > .form-row {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .images-group > .form-row > .col-3 {
+    display: inline-block;
+    float: none;
+  }
+  .thumbnail img {
+    height:100px;
+    width:100%;
+  }
+</style>
 <div class="container">
+  <div class="row" *ngIf="visibleAlert">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="alert alert-success mb-0 mt-2" role="alert">
+        Paquete Turistico creado exitosamente.
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12 col-md-8 offset-md-2">
       <div class="card mt-4">
@@ -64,8 +85,20 @@
                        id="fotos"
                        name="fotos[]"
                        multiple
+                       accept=".jpg, .jpeg, .png"
                        (change)="onFileChange($event)">
                 <label class="custom-file-label" for="fotos">Seleccionar Fotos</label>
+              </div>
+            </div>
+
+            <div class="container images-group mb-3" *ngIf="images_loaded">
+              <div class="form-row flex-nowrap" style="overflow-x: auto">
+                <div class="col-3 thumbnail" *ngFor="let foto of fotos; index as i">
+                  <button type="button" class="close" aria-label="Close" (click)="removeFoto(i)">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <img class="img-thumbnail" style="overflow:auto;" src="{{foto.data}}" alt="">
+                </div>
               </div>
             </div>
 

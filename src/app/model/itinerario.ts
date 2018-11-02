@@ -1,5 +1,5 @@
 export class Itinerario {
-  id: number;
+  id?: number;
   nombre: string;
   fechaInicio: any;
   fechaFin: any;

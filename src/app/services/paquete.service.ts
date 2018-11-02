@@ -131,30 +131,30 @@ export class PaqueteService {
 
   getServicios() {
     return [
-      {id:1, nombre:"servicio #1"},
-      {id:2, nombre:"servicio #2"},
-      {id:3, nombre:"servicio #3"},
-      {id:4, nombre:"servicio #4"},
-      {id:5, nombre:"servicio #5"},
-      {id:6, nombre:"servicio #6"},
+      {nombre:"servicio #1"},
+      {nombre:"servicio #2"},
+      {nombre:"servicio #3"},
+      {nombre:"servicio #4"},
+      {nombre:"servicio #5"},
+      {nombre:"servicio #6"},
     ];
   }
 
   getCircuitos() {
     return [
-      {id:1, nombre:"circuito #1"},
-      {id:2, nombre:"circuito #2"},
-      {id:3, nombre:"circuito #3"},
-      {id:4, nombre:"circuito #4"},
-      {id:5, nombre:"circuito #5"},
-      {id:6, nombre:"circuito #6"},
+      {nombre:"circuito #1"},
+      {nombre:"circuito #2"},
+      {nombre:"circuito #3"},
+      {nombre:"circuito #4"},
+      {nombre:"circuito #5"},
+      {nombre:"circuito #6"},
     ];
   }
 
   getItinerario() {
     //new Date().toJSON().slice(0, 10)
     //new Date().toJSON().slice(11, 20)
-    return {id:1, nombre:"itinerario", fechaInicio:"2018/10/25",fechaFin:"2018/10/29",horaInicio:"16:05:00",horaFin:"16:05:00"};
+    return {nombre:"itinerario", fechaInicio:"2018-10-25",fechaFin:"2018-10-29",horaInicio:"16:05:00",horaFin:"16:05:00"};
   }
 
   saveData(paquete: Paquete): Observable<Paquete> {
