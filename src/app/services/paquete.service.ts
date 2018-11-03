@@ -160,4 +160,40 @@ export class PaqueteService {
   saveData(paquete: Paquete): Observable<Paquete> {
     return this.http.post<Paquete>('http://localhost:8080/paquete', paquete, httpOptions);
   }
+
+  getPaquete(){
+    return {
+      nombre: "Paquete #1",
+      precio: 234.12,
+      descripcion: "la descripcion completa de este PT",
+      fotos: [
+        {
+          nombre: "foto nombre",
+          tipo: "image/png",
+          data: "fulldata image"
+        },
+        {
+          nombre: "foto nombre",
+          tipo: "image/png",
+          data: "fulldata image"
+        }
+      ],
+      servicios: [
+        {id:1, nombre:"servicio #1"},
+        {id:2, nombre:"servicio #2"}
+      ],
+      circuitos: [
+        {id:1, nombre:"circuito #1"},
+        {id:2, nombre:"circuito #2"}
+      ],
+      itinerario: {
+        id:1, 
+        nombre:"itinerario", 
+        fechaInicio:"2018/10/25",
+        fechaFin:"2018/10/29",
+        horaInicio:"16:05:00",
+        horaFin:"16:05:00"
+      }
+    };
+  }
 }
