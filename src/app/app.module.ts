@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 
+import { PagerService } from './services/pager.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/c
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

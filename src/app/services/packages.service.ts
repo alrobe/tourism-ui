@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 const API_URL_PACKAGE='http://localhost:8080/package';
-const API_URL_PACKAGES='http://localhost:8080/package/All';
+const API_URL_PACKAGES='http://localhost:8080/package/all';
 @Injectable({
   providedIn: 'root'
 })
