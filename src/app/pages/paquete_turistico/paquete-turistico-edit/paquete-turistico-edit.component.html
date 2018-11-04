@@ -1,0 +1,165 @@
+<style>
+  .images-group > .form-row {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .images-group > .form-row > .col-3 {
+    display: inline-block;
+    float: none;
+  }
+  .thumbnail img {
+    height:100px;
+    width:100%;
+  }
+</style>
+<div class="container">
+  <div class="row" *ngIf="visibleAlert">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="alert alert-success mb-0 mt-2" role="alert">
+        Paquete Turistico editado exitosamente.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="card mt-4">
+        <div class="card-header">
+          Editar Paquete Turistico
+          <button type="button" class="btn btn-danger float-right" (click)="delete()">Eliminar</button>
+        </div>
+        <div class="card-body">
+          <form class="form-horizontal" (ngSubmit)="heroForm.form.valid && onSubmit()" #heroForm="ngForm" novalidate>
+
+            <div class="form-group">
+              <!--<label for="nombre">Nombre</label>-->
+              <input type="text"
+                     class="form-control"
+                     id="nombre"
+                     name="nombre"
+                     [(ngModel)]="model.nombre"
+                     #nombre = "ngModel"
+                     [ngClass]="{'is-invalid':heroForm.submitted && nombre.invalid}"
+                     placeholder="Ingrese Nombre Paquete Turistico"
+                     minlength="4" maxlength="40"
+                     required>
+              <div class="invalid-feedback">
+                <div>Campo requerido</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <!--<label for="precio">Precio</label>-->
+              <input type="number"
+                     min="0"
+                     value="0"
+                     step=".01"
+                     class="form-control"
+                     id="precio"
+                     name="precio"
+                     [(ngModel)]="model.precio"
+                     #precio = "ngModel"
+                     [ngClass]="{'is-invalid':heroForm.submitted && precio.invalid}"
+                     placeholder="Ingrese Precio formato 0000.00"
+                     required>
+              <div class="invalid-feedback">
+                <div>Campo requerido</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="descripcion">Descripcion</label>
+              <textarea name="descripcion"
+                        class="form-control"
+                        id="descripcion"
+                        cols="30" rows="5" maxlength="200"
+                        [(ngModel)]="model.descripcion"
+                        #descripcion = "ngModel"
+                        [ngClass]="{'is-invalid':heroForm.submitted && descripcion.invalid}"
+                        required></textarea>
+              <div *ngIf="heroForm.submitted && descripcion.invalid" class="invalid-feedback">
+                <div *ngIf="descripcion.errors.required">Campo requerido</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       id="fotos"
+                       name="fotos[]"
+                       multiple
+                       accept=".jpg, .jpeg, .png"
+                       (change)="onFileChange($event)">
+                <label class="custom-file-label" for="fotos">Seleccionar Fotos</label>
+              </div>
+            </div>
+
+            <div class="container images-group mb-3" *ngIf="images_loaded">
+              <div class="form-row flex-nowrap" style="overflow-x: auto">
+                <div class="col-3 thumbnail" *ngFor="let foto of fotos; index as i">
+                  <button type="button" class="close" aria-label="Close" (click)="removeFoto(i)">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <img class="img-thumbnail" style="overflow:auto;" src="{{foto.data}}" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="servicios">Seleccionar Servicios</label>
+              <select multiple [compareWith]="compareService"
+                      class="form-control"
+                      id="servicios"
+                      name="servicios"
+                      [(ngModel)]="model.servicios">
+                <!--<option selected disabled hidden>Seleccione Servicio...</option>-->
+                <option *ngFor="let servicio of servicios" [ngValue]="servicio">
+                  {{ servicio.nombre }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="servicios">Seleccionar Circuito</label>
+              <select multiple [compareWith]="compareCircuito"
+                      class="form-control"
+                      id="circuitos"
+                      name="circuitos"
+                      [(ngModel)]="model.circuitos">
+                <!--<option selected disabled hidden>Seleccione Circuito...</option>-->
+                <option *ngFor="let circuito of circuitos" [ngValue]="circuito">
+                  {{ circuito.nombre }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="itinerario">Seleccionar Itinerario</label>
+              <select name="itinerario"
+                      class="form-control"
+                      id="itinerario"
+                      [(ngModel)]="model.itinerario"
+                      [ngClass]="{'is-invalid':heroForm.submitted && heroForm.form.controls.itinerario.invalid}"
+                      required>
+                <!--<option selected disabled>Seleccione Itinerario...</option>-->
+                <option [value]="itinerario" selected="selected">{{ itinerario.nombre }}</option>
+              </select>
+              <div *ngIf="heroForm.submitted && heroForm.form.controls.itinerario.invalid" class="invalid-feedback">
+                <div *ngIf="heroForm.form.controls.itinerario.errors.required">Campo requerido</div>
+              </div>
+            </div>
+
+            <div class="float-right">
+              <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+              <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<pre>{{ model | json}}</pre>-->
+<!--<pre>{{heroForm.value | json}}</pre>-->
