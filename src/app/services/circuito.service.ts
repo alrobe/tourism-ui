@@ -15,8 +15,8 @@ export class CircuitoService {
       new Circuit("adios estres", [this.destinos[3],this.destinos[2],this.destinos[6],this.destinos[9],]),
       ];
   constructor(private destinoService:DestinoService) { }
-  getCircuito(id: number)
+  getCircuito(circuitoId)
   {
-    return this.circuitos[id];
+    return this.circuitos[circuitoId];
   }
 }

@@ -1,13 +1,19 @@
-<p>
-  circuito-vista-destinos works!
-</p>
-<div class="container">
-  <h3>Tooltip Example</h3>
-  <a href="#" data-toggle="tooltip" title="Hy!">Hover over me</a>
-</div>
 
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
+<div *ngIf="circuito$" class="container">
+  <h1>{{ circuito$.nombre }}</h1>
+  <div class="modal-body row">
+      <div class = "list-group col-md-6">
+          <button *ngFor = "let destino of circuito$.destinos"type="button" 
+          class="list-group-item list-group-item-action"data-toggle="tooltip"
+          title="{{destino.description}}" (click)="show(destino)"><h3>{{destino.name}}</h3></button>
+      </div>
+      <div class="col-md-6">
+        {{destino$}}
+      </div>
+    </div>
+</div>
