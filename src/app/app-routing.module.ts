@@ -20,7 +20,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'circuito',
+    path: 'circuito/:id',
     children: [
       { path: 'verDestinos', component: CircuitoVistaDestinosComponent}
     ]
