@@ -12,7 +12,7 @@ export class TouristDestiny {
 
     province: Province;
 
-    constructor(name: string, coordinates: string,lodging: string; internet: string; weather: string; feeding: string; timeTravel: string; province: Province) {
+    constructor(name: string, coordinates: string,lodging: string, internet: string, weather: string, feeding: string, timeTravel: string, province: Province) {
         this.name = name;
         this.province = province;
         this.coordinates = coordinates;
