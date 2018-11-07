@@ -8,6 +8,10 @@ import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/c
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service'
 
+import { AgencyService } from './services/agency.service';
+import { TouristDestinyService } from './services/touristDestiny.service';
+import { PagerService } from './services/pager.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,7 @@ import { AuthGuardService } from './services/auth-guard.service'
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AgencyService, TouristDestinyService, PagerService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

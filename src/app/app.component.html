@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Tourism</a>
-    <div class='navbar-collapse'>
-        <ul class="nav navbar-nav ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tourismNavbar" aria-controls="tourismNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="tourismNavbar">
+        <ul class="navbar-nav mr-auto">
             <li class='nav-item'>
                 <a class='nav-link' routerLink="/agency">Agencia</a>
             </li>
@@ -22,4 +25,5 @@
         </button>
     </span>
 </nav>
+<br/>
 <router-outlet></router-outlet>

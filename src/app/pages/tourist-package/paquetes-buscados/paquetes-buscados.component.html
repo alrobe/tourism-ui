@@ -17,5 +17,25 @@
 
 <div class="card-columns">
     <!-- *ngFor="let heroe of heroes;let i=index" -->
-    <app-tarjeta-paquete (paqueteSeleccionado)="verPaquete($event)" *ngFor="let paquete of paquetesBuscados" [paquete]="paquete" [index]="paquete.id"></app-tarjeta-paquete>
+    <app-tarjeta-paquete (paqueteSeleccionado)="verPaquete($event)" *ngFor="let paquete of pagedItems, index as i" [paquete]="paquete" [index]="paquete.id"></app-tarjeta-paquete>
+</div>
+
+<div class="pag">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="btn btn-outline-primary" (click)="setPage(1)">Primero</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.currentPage - 1)">Anterior</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="btn btn-outline-primary" (click)="setPage(page)"> {{page}} </a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.currentPage + 1)">Siguiente</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.totalPages)">Último</a>
+        </li>
+    </ul>
 </div>
