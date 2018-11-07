@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {PaqueteService} from "../../../services/paquete.service";
 import {Paquete} from "../../../model/paquete";
 import {Foto} from "../../../model/foto";
@@ -8,11 +8,11 @@ import {Circuito} from "../../../model/circuito";
 import {Itinerario} from "../../../model/itinerario";
 
 @Component({
-  selector: 'app-paquete-turistico-create',
-  templateUrl: './paquete-turistico-create.component.html',
-  styleUrls: ['./paquete-turistico-create.component.css']
+  selector: 'app-paquete-turistico-edit',
+  templateUrl: './paquete-turistico-edit.component.html',
+  styleUrls: ['./paquete-turistico-edit.component.css']
 })
-export class PaqueteTuristicoCreateComponent implements OnInit {
+export class PaqueteTuristicoEditComponent implements OnInit {
 
   submitted = false;
   images_loaded = false;
@@ -24,38 +24,58 @@ export class PaqueteTuristicoCreateComponent implements OnInit {
   circuitos: Circuito[];
   itinerario: Itinerario;
 
-  constructor(private service: PaqueteService, private router: Router) {}
+  constructor(private service: PaqueteService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.service.getPaquete(+this.route.snapshot.params.id).subscribe(
+      response => {
+        this.model = response;
+        if (this.model.fotos) {
+          this.loadFotos(this.model.fotos);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    //this.model = this.service.getPaquete(+this.route.snapshot.params.id);
     this.servicios = this.service.getServicios();
     this.circuitos = this.service.getCircuitos();
     this.itinerario = this.service.getItinerario();
+    if (this.model.fotos) {
+      this.loadFotos(this.model.fotos);
+    }
   }
 
   onSubmit() {
     this.submitted = true;
-    this.model.fotos = this.fotos;
     console.log(this.model);
-    this.service.saveData(this.model).subscribe(
+    console.log(this.fotos);
+  }
+
+  delete() {
+    console.log(this.model.id);
+    this.service.deletePaquete(this.model.id).subscribe(
       response => {
-        this.visibleAlert = true;
-        setTimeout(() => {
-          this.router.navigate(['/']);
-        }, 3000);
+        console.log(response);
       },
       error => {
-        console.log('hubo un error, aka se procesa el error');
         console.log(error);
-        // lo de abajo seria como un ejemplo..si hay error ,guardar en error
-        //this.errors = error
-      },
-      () => {
-        console.log('esto siempre se procesa,similar al finally de try catch');
       }
     );
-    //if (!this.errors) {
-      //route to new page
-    //}
+  }
+
+  compareService(s1: Servicio, s2: Servicio): boolean {
+    return s1 && s2 ? s1.nombre === s2.nombre : s1 === s2;
+  }
+
+  compareCircuito(c1: Circuito, c2: Circuito): boolean {
+    return c1 && c2 ? c1.nombre === c2.nombre : c1 === c2;
+  }
+
+  loadFotos (fotos: Foto[]) {
+    this.fotos = fotos;
+    this.images_loaded = true;
   }
 
   cancel() {
@@ -85,7 +105,5 @@ export class PaqueteTuristicoCreateComponent implements OnInit {
   removeFoto(index) {
     this.fotos.splice(index,1);
   }
-
-  //get diagnostic() { return JSON.stringify(this.model); }
 
 }

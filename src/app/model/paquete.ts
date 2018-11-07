@@ -5,13 +5,13 @@ import {Calificacion} from "./calificacion";
 import {Itinerario} from "./itinerario";
 
 export class Paquete {
-  id: number;
+  id?: number;
   nombre: string;
   precio: number;
   descripcion: string;
-  fotos: Foto[];
-  servicios: Servicio[];
-  circuitos: Circuito[];
-  calificaciones: Calificacion[];
-  itinerario: Itinerario;
+  fotos?: Foto[];
+  servicios?: Servicio[];
+  circuitos?: Circuito[];
+  calificaciones?: Calificacion[];
+  itinerario?: Itinerario;
 }
