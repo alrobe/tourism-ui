@@ -11,12 +11,15 @@ export class CircuitoVistaDestinosComponent implements OnInit {
 
   circuito$: Object;
   destino$: string = "";
-  constructor(private data: CircuitoService, private route: ActivatedRoute) { 
+  constructor(private circuitoService: CircuitoService, private route: ActivatedRoute) { 
     this.route.params.subscribe( params => this.circuito$ = params.id)
   }
 
   ngOnInit() {
-    this.circuito$ = this.data.getCircuito(this.circuito$);
+    
+      this.circuitoService.getCircuito(this.circuito$).subscribe((data)=>{
+        this.circuito$ = data;
+      });
   }
 
   show(destino)
