@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 import { PaqueteTuristicoCreateComponent } from './pages/paquete_turistico/paquete-turistico-create/paquete-turistico-create.component';
 import { PaqueteTuristicoEditComponent } from './pages/paquete_turistico/paquete-turistico-edit/paquete-turistico-edit.component';
+import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
+import { AgencyService } from './services/agency.service';
+import { TouristDestinyService } from './services/touristDestiny.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { PaqueteTuristicoEditComponent } from './pages/paquete_turistico/paquete
     CreateDestinyComponent,
     PaqueteTuristicoCreateComponent,
     PaqueteTuristicoEditComponent
+    CircuitoVistaDestinosComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { PaqueteTuristicoEditComponent } from './pages/paquete_turistico/paquete
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AgencyService, TouristDestinyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
