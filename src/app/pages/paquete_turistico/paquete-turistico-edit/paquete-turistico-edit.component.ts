@@ -17,6 +17,7 @@ export class PaqueteTuristicoEditComponent implements OnInit {
   submitted = false;
   images_loaded = false;
   visibleAlert = false;
+  message:string;
 
   model: Paquete = new Paquete();
   fotos: Foto[] = [];
@@ -57,7 +58,11 @@ export class PaqueteTuristicoEditComponent implements OnInit {
     console.log(this.model.id);
     this.service.deletePaquete(this.model.id).subscribe(
       response => {
-        console.log(response);
+        this.message = "Paquete turistico Eliminado correctamente";
+        this.visibleAlert = true;
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 3000);
       },
       error => {
         console.log(error);
