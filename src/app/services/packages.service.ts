@@ -6,6 +6,7 @@ import { Calificacion } from '../model/paqueteTuristico/calificacion';
 
 const API_URL_PACKAGE='http://localhost:8080/paquete';
 const API_URL_PACKAGES='http://localhost:8080/paquetes';
+const API_URL_COMENT="http://localhost:8080/calificacion";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +23,6 @@ export class PackagesService {
   }
   
   setComentario(calificacion:Calificacion):Observable<Calificacion>{
-    return this.httpClient.post<Calificacion>(API_URL_PACKAGE,calificacion);
+    return this.httpClient.post<Calificacion>(API_URL_COMENT,calificacion);
   }
 }

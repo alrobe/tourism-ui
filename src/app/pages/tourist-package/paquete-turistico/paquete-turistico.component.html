@@ -15,10 +15,10 @@
                     <img style="height: 500px;" class="d-block w-100" [src]="paquete.fotos[0].data" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height: 500px;" class="d-block w-100" [src]="paquete.fotos[1].data" alt="Second slide">
+                    <img style="height: 500px;" class="d-block w-100" [src]="paquete.fotos[0].data" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img style="height: 500px" class="d-block w-100" [src]="paquete.fotos[2].data" alt="Third slide">
+                    <img style="height: 500px" class="d-block w-100" [src]="paquete.fotos[0].data" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -32,23 +32,24 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{paquete.nombre}}</h5>
+            <h5>Descripcion:</h5>
             <p class="card-text">{{paquete.descripcion}}</p>
-            <p class="card-text"><small class="text-muted">{{paquete.precio}}</small></p>
+            <p class="card-text"><small class="text-muted"><h6>Precio: {{paquete.precio}}</h6></small></p>
             <div>
                 <button *ngFor="let circuito of paquete.circuitos" type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/']">{{circuito.nombre}}</button>
             </div>
         </div>
 
         <div>
-            <h6>Calificacion:</h6>
-            {{promedioPuntuacion}}
+            <h6>Calificacion: {{promedioPuntuacion}}</h6>
+
         </div>
-        <form (ngSubmit)="comentar()">
+        <form (ngSubmit)="comentar()" #forma="ngForm">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1"><h6>Comentar</h6></label>
-                <textarea name="comentario" required class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                <textarea [(ngModel)]="calificacion.comentario" name="comentario" placeholder="Comenta" class="form-control " id="exampleFormControlTextarea1 " rows="3" required></textarea>
             </div>
-            <button [disabled]="" class="btn btn-outline-primary centro " type="submit ">comentar</button>
+            <button [disabled]="!forma.valid" class="btn btn-outline-primary centro " type="submit">comentar</button>
         </form>
         <div class="card-footer text-muted text-center "></div>
         <div class="card comentarios " style="width: 18rem; ">
