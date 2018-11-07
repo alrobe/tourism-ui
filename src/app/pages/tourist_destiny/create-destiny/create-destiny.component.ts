@@ -13,7 +13,7 @@ export class CreateDestinyComponent implements OnInit {
   constructor() { }
 
   save_tourist_destiny(): void{
-    console.log("you are sending to save." + this.tourist_destiny)
+    console.log("you are sending to save." + this.tourist_destiny);
   }
 
   ngOnInit() {
