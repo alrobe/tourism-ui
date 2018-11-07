@@ -1,25 +1,27 @@
-import { Province } from './province'
-
 export class TouristDestiny {
     id: number;
     name: string;
+    description: string;
     coordinates: string;
-    lodging: string;
-    internet: string;
+    department: string;
+    province: string;
+    locality: string;
     weather: string;
-    feeding: string;
-    timeTravel: string;
+    availableService: string;
+    travelTime: string;
 
-    province: Province;
 
-    constructor(name: string, coordinates: string,lodging: string, internet: string, weather: string, feeding: string, timeTravel: string, province: Province) {
+    constructor(name: string, description: string, coordinates: string, department: string, province: string, locality: string, weather: string, availableService: string, travelTime: string) {
+
         this.name = name;
-        this.province = province;
+        this.description = description;
         this.coordinates = coordinates;
-        this.lodging = lodging;
-        this.internet = internet;
+        this.department = department;
+        this.province = province;
+        this.locality = locality;
         this.weather = weather;
-        this.feeding = feeding;
-        this.timeTravel = timeTravel;
+        this.availableService = availableService;
+        this.travelTime = travelTime;
     }
 }
+
