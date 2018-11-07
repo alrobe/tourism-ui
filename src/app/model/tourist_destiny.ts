@@ -1,6 +1,7 @@
 import { Province } from './province'
 
 export class TouristDestiny {
+    id: number;
     name: string;
     coordinates: string;
     lodging: string;
