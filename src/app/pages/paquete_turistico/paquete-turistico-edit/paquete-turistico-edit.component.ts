@@ -39,7 +39,6 @@ export class PaqueteTuristicoEditComponent implements OnInit {
         console.log(error);
       }
     );
-    //this.model = this.service.getPaquete(+this.route.snapshot.params.id);
     this.servicios = this.service.getServicios();
     this.circuitos = this.service.getCircuitos();
     this.itinerario = this.service.getItinerario();
@@ -50,8 +49,18 @@ export class PaqueteTuristicoEditComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.model);
-    console.log(this.fotos);
+    this.service.updatePaquete(+this.route.snapshot.params.id, this.model).subscribe(
+      response => {
+        this.message = "Paquete turistico Actualizado correctamente";
+        this.visibleAlert = true;
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 2000);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   delete() {
@@ -62,7 +71,7 @@ export class PaqueteTuristicoEditComponent implements OnInit {
         this.visibleAlert = true;
         setTimeout(() => {
           this.router.navigate(['/']);
-        }, 3000);
+        }, 2000);
       },
       error => {
         console.log(error);
