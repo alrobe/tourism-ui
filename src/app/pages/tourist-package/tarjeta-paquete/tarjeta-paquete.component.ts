@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input, Output, EventEmitter} from '@angular/core';
-import { Paquete } from '../../../model/packages';
+import { Paquete } from '../../../model/paqueteTuristico/paquete';
 
 @Component({
   selector: 'app-tarjeta-paquete',

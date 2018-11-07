@@ -1,9 +1,9 @@
 <div class="card">
-    <img class="card-img-top" [src]="paquete.keywords" alt="Card image cap">
+    <img class="card-img-top" [src]="paquete.fotos[0].data" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">{{paquete.name}}</h5>
-        <p class="card-text">{{paquete.description}}</p>
-        <p class="card-text"><small class="text-muted">{{paquete.inversion}}</small></p>
+        <h5 class="card-title">{{paquete.nombre}}</h5>
+        <p class="card-text">{{paquete.descripcion}}</p>
+        <p class="card-text"><small class="text-muted">{{paquete.precio}}</small></p>
         <button (click)="verPaquete()" type="button" class="btn btn-outline-primary btn-block">Ver Mas ...</button>
     </div>
 </div>

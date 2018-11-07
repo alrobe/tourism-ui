@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackagesService } from '../../../services/packages.service';
-import { Paquete } from '../../../model/packages';
+import { Paquete } from '../../../model/paqueteTuristico/paquete';
 import { Observer } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -29,9 +29,9 @@ export class PaquetesBuscadosComponent implements OnInit {
         this.termino = this.termino.toLocaleLowerCase();
 
         for(let i=0;i<data.length;i++){
-            let nombre = data[i].name.toLocaleLowerCase();
+            let nombre = data[i].nombre.toLocaleLowerCase();
             if(nombre.indexOf(this.termino)>=0){
-                data[i].id=data[i].categoryId;
+                data[i].id=data[i].id;
                 paquetes.push(data[i]);
             }
         }
