@@ -1,10 +1,11 @@
 import {Person} from './person'
 
 export class Agency{
-    nameAgency: string;
+    id        : string;
+    name: string;
     adress    : string;
-    mail      : string;
-    telf      : string;
+    email      : string;
+    phone      : string;
     webPage   : string;
     person    : Person;
 }
