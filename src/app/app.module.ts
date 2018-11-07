@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 import { FormsModule } from '@angular/forms';
 
+import { AgencyService } from './services/agency.service';
+import { TouristDestinyService } from './services/touristDestiny.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AgencyService, TouristDestinyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
