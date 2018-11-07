@@ -15,6 +15,6 @@ export class AgencyService {
   }
 
   createAgency(agency: Agency){
-      return this.http.post(this.baseUrl, agency);
+      return this.http.post(this.baseUrl, agency).toPromise();
   }
 }
