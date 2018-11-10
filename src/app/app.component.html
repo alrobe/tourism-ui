@@ -9,10 +9,7 @@
                 <a class='nav-link' routerLink="/agency">Agencia</a>
             </li>
             <li class="nav-item">
-                <a class='nav-link' *ngIf="auth.isAuthenticated()" routerLink="/paquetes/paquetesBuscados/paq">paquetes Turisticos</a>
-            </li>
-            <li class="nav-item">
-                <a class='nav-link' *ngIf="!auth.isAuthenticated()" (click)="login()">Login</a>
+                <a class='nav-link' *ngIf=" auth.isAuthenticated()" routerLink="/paquetes/paquetesBuscados/paq">paquetes Turisticos</a>
             </li>
         </ul>
     </div>
@@ -20,7 +17,7 @@
         <button (click)="login()" class="btn btn-outline-primary" type="button" *ngIf="!auth.isAuthenticated()">
             Ingresar
         </button>
-        <button (click)="salir()" class="btn btn-outline-primary" type="button" *ngIf="auth.isAuthenticated()">
+        <button (click)="salir()" class="btn btn-outline-primary" type="button" *ngIf=" auth.isAuthenticated()">
             Salir
         </button>
     </span>

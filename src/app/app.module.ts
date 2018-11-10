@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateDestinyComponent } from './pages/tourist_destiny/create-destiny/create-destiny.component';
 import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service'
+import { AuthGuardService } from './services/auth-guard.service';
 
 import { AgencyService } from './services/agency.service';
 import { TouristDestinyService } from './services/touristDestiny.service';
