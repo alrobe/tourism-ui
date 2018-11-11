@@ -14,7 +14,7 @@ export class AuthService {
     clientID: 'jLlyx4GR5v2kARPNI4se7XqfpIbzhYLy',
     domain: 'santos-denikin.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'http://localhost:4200/',
     scope: 'openid'
   });
 
