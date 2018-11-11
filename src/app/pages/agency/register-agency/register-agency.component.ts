@@ -41,9 +41,9 @@ export class RegisterAgencyComponent implements OnInit {
   }
 
   createAgencyModel(){
-    this.agencyToSave.nameAgency = this.agencyForm.get('agencyName').value;
-    this.agencyToSave.telf = this.agencyForm.get('agencyPhone').value;
-    this.agencyToSave.mail = this.agencyForm.get('agencyEmail').value;
+    this.agencyToSave.name = this.agencyForm.get('agencyName').value;
+    this.agencyToSave.phone = this.agencyForm.get('agencyPhone').value;
+    this.agencyToSave.email= this.agencyForm.get('agencyEmail').value;
     this.agencyToSave.webPage = this.agencyForm.get('agencyWebPage').value;
     this.agencyToSave.person.name = this.agencyForm.get('representativeName').value;
     this.agencyToSave.person.lastName = this.agencyForm.get('representativeLastName').value;
