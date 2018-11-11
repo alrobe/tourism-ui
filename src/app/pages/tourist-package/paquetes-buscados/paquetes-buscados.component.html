@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark">
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Paquete Turistico" aria-label="Search" #buscarTexto>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="buscarPaquete(buscarTexto.value)">Search</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Paquete Turistico" aria-label="Search" (keyup.enter)="buscarPaquete(buscarTexto.value)" #buscarTexto>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarPaquete(buscarTexto.value)">Search</button>
     </form>
 </nav>
 <h1>Buscando <small>{{termino}}</small></h1>
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="card-columns">
+<div class="card-columns" *ngIf="paquetesBuscados.length!=0">
     <!-- *ngFor="let heroe of heroes;let i=index" -->
     <app-tarjeta-paquete (paqueteSeleccionado)="verPaquete($event)" *ngFor="let paquete of pagedItems, index as i" [paquete]="paquete" [index]="paquete.id"></app-tarjeta-paquete>
 </div>

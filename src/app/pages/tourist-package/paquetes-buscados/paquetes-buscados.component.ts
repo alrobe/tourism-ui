@@ -65,11 +65,13 @@ export class PaquetesBuscadosComponent implements OnInit {
   }
 
   verPaquete(index:number){
-    this.router.navigate(['/paquetes/paqueteTuristico',index])
+    this.router.navigate(['/paquetes/paqueteTuristico',index]);
   }
 
   buscarPaquete(nombre:string){
-    this.router.navigate(['/paquetes/paquetesBuscados',nombre])
+    this.router.navigate(['/paquetes/paquetesBuscados',nombre]);
+    
+    this.ngOnInit();
   }
 
   setPage(page: number) {

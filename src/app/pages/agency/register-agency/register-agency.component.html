@@ -5,8 +5,7 @@
             <label>Nombre de la agncia turistica</label>
             <input type="text" class="form-control" formControlName="agencyName">
             <div *ngIf="agencyForm.controls.agencyName.invalid 
-            && (agencyForm.controls.agencyName.dirty || agencyForm.controls.agencyName.touched)" 
-            class="text-danger">
+            && (agencyForm.controls.agencyName.dirty || agencyForm.controls.agencyName.touched)" class="text-danger">
                 <p *ngIf="agencyForm.controls.agencyName.errors.required">
                     El nombre es requerido.
                 </p>
@@ -16,9 +15,8 @@
             <label>Telefono</label>
             <input type="text" class="form-control" formControlName="agencyPhone">
             <div *ngIf="agencyForm.controls.agencyPhone.invalid 
-            && (agencyForm.controls.agencyPhone.dirty || agencyForm.controls.agencyPhone.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.agencyPhone.errors.required"> 
+            && (agencyForm.controls.agencyPhone.dirty || agencyForm.controls.agencyPhone.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.agencyPhone.errors.required">
                     El telefono es requerido.
                 </p>
             </div>
@@ -27,12 +25,11 @@
             <label>Correo electronico</label>
             <input type="text" class="form-control" formControlName="agencyEmail">
             <div *ngIf="agencyForm.controls.agencyEmail.invalid 
-            && (agencyForm.controls.agencyEmail.dirty || agencyForm.controls.agencyEmail.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.agencyEmail.errors.required"> 
+            && (agencyForm.controls.agencyEmail.dirty || agencyForm.controls.agencyEmail.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.agencyEmail.errors.required">
                     El correo electronico es requerido.
                 </p>
-                <p *ngIf="agencyForm.controls.agencyEmail.errors.email"> 
+                <p *ngIf="agencyForm.controls.agencyEmail.errors.email">
                     El correo electronico es invalido.
                 </p>
             </div>
@@ -41,10 +38,9 @@
             <label>Pagina web</label>
             <input type="text" class="form-control" formControlName="agencyWebPage">
             <div *ngIf="agencyForm.controls.agencyWebPage.invalid 
-            && (agencyForm.controls.agencyWebPage.dirty || agencyForm.controls.agencyWebPage.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.agencyWebPage.errors.required"> 
-                    La pagina web es requerida. 
+            && (agencyForm.controls.agencyWebPage.dirty || agencyForm.controls.agencyWebPage.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.agencyWebPage.errors.required">
+                    La pagina web es requerida.
                 </p>
             </div>
         </div>
@@ -53,9 +49,8 @@
             <label>Nombre</label>
             <input type="text" class="form-control" formControlName="representativeName">
             <div *ngIf="agencyForm.controls.representativeName.invalid 
-            && (agencyForm.controls.representativeName.dirty || agencyForm.controls.representativeName.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.representativeName.errors.required"> 
+            && (agencyForm.controls.representativeName.dirty || agencyForm.controls.representativeName.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.representativeName.errors.required">
                     El nombre es requerido.
                 </p>
             </div>
@@ -64,9 +59,8 @@
             <label>Apellido</label>
             <input type="text" class="form-control" formControlName="representativeLastName">
             <div *ngIf="agencyForm.controls.representativeLastName.invalid 
-            && (agencyForm.controls.representativeLastName.dirty || agencyForm.controls.representativeLastName.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.representativeLastName.errors.required"> 
+            && (agencyForm.controls.representativeLastName.dirty || agencyForm.controls.representativeLastName.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.representativeLastName.errors.required">
                     El apellido es requerido.
                 </p>
             </div>
@@ -75,12 +69,11 @@
             <label>Correo electronico</label>
             <input type="text" class="form-control" formControlName="representativeEmail">
             <div *ngIf="agencyForm.controls.representativeEmail.invalid 
-            && (agencyForm.controls.representativeEmail.dirty || agencyForm.controls.representativeEmail.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.representativeEmail.errors.required"> 
+            && (agencyForm.controls.representativeEmail.dirty || agencyForm.controls.representativeEmail.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.representativeEmail.errors.required">
                     El correo electronico es requerido.
                 </p>
-                <p *ngIf="agencyForm.controls.representativeEmail.errors.email"> 
+                <p *ngIf="agencyForm.controls.representativeEmail.errors.email">
                     El correo electronico es invalido.
                 </p>
             </div>
@@ -89,14 +82,13 @@
             <label>Telefono</label>
             <input type="text" class="form-control" formControlName="representativePhone">
             <div *ngIf="agencyForm.controls.representativePhone.invalid 
-            && (agencyForm.controls.representativePhone.dirty || agencyForm.controls.representativePhone.touched)" 
-            class="text-danger">
-                <p *ngIf="agencyForm.controls.representativePhone.errors.required"> 
-                    El telefono es requerido. 
+            && (agencyForm.controls.representativePhone.dirty || agencyForm.controls.representativePhone.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.representativePhone.errors.required">
+                    El telefono es requerido.
                 </p>
             </div>
         </div>
-        <div class="btn-group float-right" >
+        <div class="btn-group float-right">
             <button class="btn btn-primary" [disabled]="agencyForm.invalid" (click)="saveAgency()">
                 Guardar
             </button>

@@ -49,6 +49,13 @@
                 <label for="exampleFormControlTextarea1"><h6>Comentar</h6></label>
                 <textarea [(ngModel)]="calificacion.comentario" name="comentario" placeholder="Comenta" class="form-control " id="exampleFormControlTextarea1 " rows="3" required></textarea>
             </div>
+            <div class="form-check">
+                <input type="radio" [(ngModel)]="calificacion.valor" name="valor" value="1" required>1
+                <input type="radio" [(ngModel)]="calificacion.valor" name="valor" value="2" required>2
+                <input type="radio" [(ngModel)]="calificacion.valor" name="valor" value="3" required>3
+                <input type="radio" [(ngModel)]="calificacion.valor" name="valor" value="4" required>4
+                <input type="radio" [(ngModel)]="calificacion.valor" name="valor" value="5" required>5
+            </div>
             <button [disabled]="!forma.valid" class="btn btn-outline-primary centro " type="submit">comentar</button>
         </form>
         <div class="card-footer text-muted text-center "></div>
