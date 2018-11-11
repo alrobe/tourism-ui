@@ -61,9 +61,9 @@ export class PaqueteTuristicoComponent implements OnInit {
     let cont=0;
     for(let i=0;i<cal.length;i++){
         total = total + cal[i].valor;
-        console.log(total);
+        //console.log(total);
         cont++;
-        console.log(cont);
+        //console.log(cont);
     }
     promedio=total/cont;
     this.promedioPuntuacion=promedio;
@@ -80,11 +80,14 @@ export class PaqueteTuristicoComponent implements OnInit {
       complete: () => {
         console.log('proceso finalizado');
       }
-  };
-  this._turismoService.setComentario(this.calificacion)
-  .subscribe(observador);
+
+      };
+    this._turismoService.setComentario(this.calificacion)
+    .subscribe(observador);
     console.log(this.calificacion);
-    this._router.navigate(['/paquetes/paquetesBuscados/a']);
+    //this._router.navigate(['/paquetes/paquetesBuscados/a']);
+    this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
+    this.ngOnInit();
   }
   
 }
