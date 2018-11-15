@@ -9,6 +9,7 @@ const httpOptions = {
   })
 };
 
+const url = 'http://localhost:8080';
 @Injectable({
   providedIn: 'root'
 })
@@ -159,5 +160,16 @@ export class PaqueteService {
 
   saveData(paquete: Paquete): Observable<Paquete> {
     return this.http.post<Paquete>('http://localhost:8080/paquete', paquete, httpOptions);
+  }
+  getPaquete(id: number) {
+    return this.http.get<Paquete>(`${url}/paquete/${id}`, httpOptions);
+  }
+
+  deletePaquete(id: number) {
+    return this.http.delete(`${url}/paquete/${id}`, httpOptions);
+  }
+
+  updatePaquete(id: number, paquete: Paquete): Observable<any> {
+    return this.http.put(`${url}/paquete/${id}`, paquete, httpOptions);
   }
 }
