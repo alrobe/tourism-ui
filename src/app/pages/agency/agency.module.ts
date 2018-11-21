@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AgencyRoutingModule } from './agency-routing.module';
 import { RegisterAgencyComponent } from './register-agency/register-agency.component';
-import { PaqueteTuristicoComponent } from './paquete-turistico/paquete-turistico.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,8 +12,7 @@ import { PaqueteTuristicoComponent } from './paquete-turistico/paquete-turistico
     ReactiveFormsModule
   ],
   declarations: [
-    RegisterAgencyComponent,
-    PaqueteTuristicoComponent
+    RegisterAgencyComponent
   ]
 })
 export class AgencyModule { }

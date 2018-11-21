@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RegisterAgencyComponent } from './register-agency/register-agency.component';
-import { PaqueteTuristicoComponent } from './paquete-turistico/paquete-turistico.component';
+
 const routes: Routes = [
   {
     path: '',
     component: RegisterAgencyComponent
   },
-  { path: 'paqueteTuristico', component: PaqueteTuristicoComponent }
 ];
 
 @NgModule({

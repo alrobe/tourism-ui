@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-dark">
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Paquete Turistico" aria-label="Search" (keyup.enter)="buscarPaquete(buscarTexto.value)" #buscarTexto>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarPaquete(buscarTexto.value)">Search</button>
+    </form>
+</nav>
+<h1>Buscando <small>{{termino}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="paquetesBuscados.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No exiten resultados con el término: {{termino}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns" *ngIf="paquetesBuscados.length!=0">
+    <!-- *ngFor="let heroe of heroes;let i=index" -->
+    <app-tarjeta-paquete (paqueteSeleccionado)="verPaquete($event)" *ngFor="let paquete of pagedItems, index as i" [paquete]="paquete" [index]="paquete.id"></app-tarjeta-paquete>
+</div>
+
+<div class="pag">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="btn btn-outline-primary" (click)="setPage(1)">Primero</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.currentPage - 1)">Anterior</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a class="btn btn-outline-primary" (click)="setPage(page)"> {{page}} </a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.currentPage + 1)">Siguiente</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="btn btn-outline-primary" (click)="setPage(pager.totalPages)">Último</a>
+        </li>
+    </ul>
+</div>

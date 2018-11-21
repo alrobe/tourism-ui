@@ -11,6 +11,7 @@ import { PaqueteTuristicoEditComponent } from './pages/paquete_turistico/paquete
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
 import { AgencyService } from './services/agency.service';
 import { TouristDestinyService } from './services/touristDestiny.service';
+import { PagerService } from './services/pager.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TouristDestinyService } from './services/touristDestiny.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AgencyService, TouristDestinyService],
+  providers: [AgencyService, TouristDestinyService, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
