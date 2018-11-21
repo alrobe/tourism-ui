@@ -8,7 +8,7 @@ const API_URL_PACKAGE='http://localhost:8080/paquete';
 const API_URL_PACKAGES='http://localhost:8080/paquetes';
 const API_URL_COMENT="http://localhost:8080/calificacion";
 @Injectable({
-  providedIn: 'root';
+  providedIn: 'root'
 })
 export class PackagesService {
  
