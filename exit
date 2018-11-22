@@ -1,0 +1,396 @@
+[33mcommit a4bc7c3a13d9ff29165140e522fb3c29541f4269[m[33m ([m[1;36mHEAD -> [m[1;32mpaquete-turistico[m[33m, [m[1;31morigin/paqueteTuristico[m[33m)[m
+Merge: 66630ac 7395f36
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Nov 7 13:47:48 2018 -0400
+
+    actualizando los cambios que se bajaron del repositorio
+
+[33mcommit 66630acc31ff715fd6e25ee2a75fe437f3e7757d[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Nov 7 09:25:00 2018 -0400
+
+    corrigiendo el pull
+
+[33mcommit aee0603cf7d6ad3ad925ef27eeacb38711b35adc[m
+Merge: 663b5f7 4085462
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Nov 7 09:18:59 2018 -0400
+
+    corrigiendo errores
+
+[33mcommit 663b5f72b55a3cc71a42dc80ada7dc600396a8ff[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Nov 7 09:05:35 2018 -0400
+
+    peticion de alfredo, sobre importar bootstrap.min.js
+
+[33mcommit 2718cc5774a3c1e003cd0e738667b3aa788efe60[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Nov 7 08:55:03 2018 -0400
+
+    redireccionar al nuevo servicio de Paquetes Turisticos
+
+[33mcommit 4085462945f2ce7d045d7b5d6bdd29f2e6dd47be[m
+Merge: fe9bbaf fc5c92d
+Author: svaleria <svaleria.gonzales@gmail.com>
+Date:   Wed Nov 7 08:37:06 2018 -0400
+
+    Merge pull request #11 from AlRoBe/crearServicioCambiosDestino
+    
+    Crear servicio cambios destino
+
+[33mcommit fc5c92de7c3ac5a1bd4565fab70ea81fff45137e[m
+Merge: 157b96c fe9bbaf
+Author: svaleria <svaleria.gonzales@gmail.com>
+Date:   Wed Nov 7 08:36:55 2018 -0400
+
+    Merge branch 'develop' into crearServicioCambiosDestino
+
+[33mcommit fe9bbaf674e23fbce0e759b4cb554beb4c6099e1[m
+Merge: 3b1131d 6731ca6
+Author: svaleria <svaleria.gonzales@gmail.com>
+Date:   Wed Nov 7 08:35:57 2018 -0400
+
+    Merge pull request #12 from AlRoBe/modelo-destinoturistico
+    
+    se aumento informacion en el modelo de destinoturistico
+
+[33mcommit 157b96cd1a841a49da18d104b54d1478bf5674c8[m
+Merge: f2ec952 3b1131d
+Author: Rodrigo Salguero <33531552+pacha2880@users.noreply.github.com>
+Date:   Wed Nov 7 08:32:28 2018 -0400
+
+    Merge branch 'develop' into crearServicioCambiosDestino
+
+[33mcommit 7395f36cb0140a70dbf618d731e0de07795e4007[m
+Author: gus_xen_12 <gus.xen.12@gmail.com>
+Date:   Sat Nov 3 16:52:34 2018 -0400
+
+    añaniendo propiedades para paginación
+
+[33mcommit caa1db7e4b57e84ecb3948fc1a7f964dca893ac4[m
+Author: gus_xen_12 <gus.xen.12@gmail.com>
+Date:   Sat Nov 3 15:40:09 2018 -0400
+
+    servicio de paginación
+
+[33mcommit 3b1131d2e0cc8284ca20ba33d8876086a29b31c2[m
+Merge: 45fc112 a235753
+Author: AlRoBe <43440631+AlRoBe@users.noreply.github.com>
+Date:   Thu Nov 1 08:43:41 2018 -0400
+
+    Merge pull request #10 from AlRoBe/registrar-agencia-turistica
+    
+    Registrar una agencia turistica
+
+[33mcommit 6731ca6c1090c88445c32e30a64f1ff8ac3bcb9a[m[33m ([m[1;31morigin/modelo-destinoturistico[m[33m)[m
+Author: Alfredo Rocha Aquino <alfredorochaaquino10@gmail.com>
+Date:   Sun Oct 28 18:58:23 2018 -0400
+
+    se aumento informacion en el modelo de destinoturistico
+
+[33mcommit f2ec95254884a485c0ce8b966a29a89411813971[m[33m ([m[1;31morigin/crearServicioCambiosDestino[m[33m)[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 25 12:20:29 2018 -0400
+
+    añadir serviceTouDestiny
+
+[33mcommit c58e52fbd99fbc99e5894b1baf568a2eb0899a5e[m
+Merge: 8a50f72 45fc112
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 25 11:28:07 2018 -0400
+
+    Merge branch 'develop' of https://github.com/AlRoBe/tourism-ui into crearServicioCambiosDestino
+
+[33mcommit 8a50f7267e3246fa1397ff6bfba2321e37415802[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 25 11:25:05 2018 -0400
+
+    importar los servicios (agengy,destiny) a app.modules
+
+[33mcommit a235753f1e0b289cb50637d350dcd3bc3a0ceb35[m[33m ([m[1;31morigin/registrar-agencia-turistica[m[33m)[m
+Author: Alfredo.RObles <alf.asper@gmail.com>
+Date:   Tue Oct 23 10:56:55 2018 -0400
+
+    guardando la agencia en la base de datos
+
+[33mcommit 2434ef10d311ba283c0abe1d0245ff32ccb2780f[m
+Author: Alfredo.RObles <alf.asper@gmail.com>
+Date:   Mon Oct 22 19:54:44 2018 -0400
+
+    validaciones basicas creadas
+
+[33mcommit 0d64769648e47360051cef9fff4c76fa563c5c73[m
+Merge: 84354a6 45fc112
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 15:01:01 2018 -0400
+
+    Merge branch 'develop' of https://github.com/AlRoBe/tourism-ui into paqueteTuristico
+
+[33mcommit 84354a6dbc3b53bc19df4324b947fd4edee06371[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 14:51:10 2018 -0400
+
+    configurando las rutas
+
+[33mcommit 74bb64818500db94f11e1e06298e7e3948e85708[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 10:49:59 2018 -0400
+
+    migracion de carpetas de los paquetes turisticos, a su respectivo modulo
+
+[33mcommit 32226987d63b569741dfb35d98f8e37a78ef49e7[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 10:38:00 2018 -0400
+
+    creacion del modulo de paquetes Turisticos con su respectiva rutas
+
+[33mcommit 2ebe86039f0dcc8cedd1a7ab60af410b0556e7a0[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 10:37:34 2018 -0400
+
+    creacion del modulo de paquetes Turisticos con su respectiva rutas
+
+[33mcommit 899e1df394b291c4262d39223ed0958d8e9c4d62[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Mon Oct 22 10:22:29 2018 -0400
+
+    creacion de modulo de paquetes Turisticos
+
+[33mcommit 49f2e3a4f68230a39f862630547c0e6468b496b9[m
+Author: Alfredo Robles Bernabe <alfredo.robles@fundacion-jala.org>
+Date:   Fri Oct 19 14:20:05 2018 -0400
+
+    creacion del formulario para registrar agencias
+
+[33mcommit 66c013c55548d7a6441e148f1936d17f373a7c9e[m
+Author: Alfredo Robles Bernabe <alfredo.robles@fundacion-jala.org>
+Date:   Fri Oct 19 12:36:13 2018 -0400
+
+    script css anadido
+
+[33mcommit 45fc112e5504cd966aaeaa617d641978b954eac7[m
+Merge: f046766 c4c4c0f
+Author: AlRoBe <43440631+AlRoBe@users.noreply.github.com>
+Date:   Fri Oct 19 11:39:59 2018 -0400
+
+    Merge pull request #8 from AlRoBe/paqueteTuristico
+    
+    Paquete turistico
+
+[33mcommit 57ec873d3d3270ff505e191155fd9dde003e00b4[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Sun Oct 14 18:09:58 2018 -0400
+
+    implemetacion del Buscar paquetes el campo de vista, funcionalidad
+
+[33mcommit 23e790fd2ba04f7800996b6d71ee4ca87e467a5c[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Sun Oct 14 16:33:06 2018 -0400
+
+    implementacion del carusel, para las imagenes
+
+[33mcommit d37a3b170e17e503cf420caab2bfa5ebfcc247ac[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Sun Oct 14 13:24:09 2018 -0400
+
+    redireccionamiento de un paquete seleccionado
+
+[33mcommit 88fbf969b6cd8c1407085c42f32b497e5c2822af[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Sun Oct 14 12:26:05 2018 -0400
+
+    implemetacion Activated router para que reciva un parametro
+
+[33mcommit 73af6029c0b5b5fd276afb11385f6c83dce07197[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Sun Oct 14 12:21:28 2018 -0400
+
+    implemetacion de entre tarjeta paquete, que muestra la informacion, y los paquetes buscados, que buscan y usan el componente tarjetePaquete
+
+[33mcommit 8d670dc1e1a1de0e4ee48aeee6619bede2960406[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Fri Oct 12 13:14:12 2018 -0400
+
+    servicio para destino metodos añadidos
+
+[33mcommit ec68ab431d0ee9340a61da329cb888f309f4bb28[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 12:48:18 2018 -0400
+
+    agregar un constructor agency y la creacion de un servicio para destino turistico
+
+[33mcommit 1aa525f92a52337979f3c491a3e71bc10b36c416[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 11:25:04 2018 -0400
+
+    creacion de los componentes paquetes buscador, un componente de tarjeta paquete, implementacion del servicio obtenerPaquetes
+
+[33mcommit c4c4c0fd41d54735eccd665f0c8a2b4473068e2e[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 08:55:14 2018 -0400
+
+    actualizado
+
+[33mcommit 68a99a0b8da4aa339bfa273e2b7a5e42b36d8ffc[m
+Merge: 93b95f7 f046766
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 08:35:43 2018 -0400
+
+    merged
+
+[33mcommit 93b95f78dcd1b755f4dd310f61cd316f543f8c43[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 08:21:15 2018 -0400
+
+    creacion de packeges.ts para interfaz de paquetes
+
+[33mcommit f0467667e628e8368a8fa6358e69d01f3c5acfbf[m
+Merge: 5c3c255 8d23cb8
+Author: orlandoloto <43373911+orlandoloto@users.noreply.github.com>
+Date:   Thu Oct 11 06:20:40 2018 -0600
+
+    Merge pull request #7 from AlRoBe/agencyService
+    
+    Agency service
+
+[33mcommit 8d23cb841921969a815fd22be2ed7427f0ef322e[m[33m ([m[1;31morigin/agencyService[m[33m)[m
+Merge: 862071d 5c3c255
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 08:18:45 2018 -0400
+
+    merged
+
+[33mcommit 5c3c2559a190d010a1275e5ebe26fe592cceef9a[m
+Merge: 8968f96 055a5e8
+Author: dlopez77 <43360652+dlopez77@users.noreply.github.com>
+Date:   Thu Oct 11 08:08:25 2018 -0400
+
+    Merge pull request #6 from AlRoBe/paqueteTuristico
+    
+    Paquete turistico
+
+[33mcommit 055a5e841e3c01aa4c628cbd53b717fa7fd3d8a9[m
+Merge: e2bc913 8968f96
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 07:56:32 2018 -0400
+
+    actualizado del develop
+
+[33mcommit 862071deca843dd8b64879489c1592f42a0d0942[m
+Merge: c92666d 8968f96
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 07:54:30 2018 -0400
+
+    Merge branch 'develop' of https://github.com/AlRoBe/tourism-ui into agencyService
+
+[33mcommit c92666d78c8d5dfd584ac406a5802b4881f177da[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 07:52:54 2018 -0400
+
+    creacion del modelo person de la agencia
+
+[33mcommit 8968f965ca249acbe09e6a737701fb9096d5c5d5[m
+Merge: 1af3b56 e8e30df
+Author: dlopez77 <43360652+dlopez77@users.noreply.github.com>
+Date:   Thu Oct 11 07:51:05 2018 -0400
+
+    Merge pull request #5 from AlRoBe/NEW_TOURIST_DESTINATION
+    
+    New tourist destination formulary
+
+[33mcommit acaf918994b365f450e03d363e74d8eb19869762[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 07:50:04 2018 -0400
+
+    creacion del modelo para la agencia
+
+[33mcommit 69f25ca8578818abe6dbb327509f66d6ec89a2f8[m
+Author: unknown <orlandolopez.lt@gmail.com>
+Date:   Thu Oct 11 07:47:56 2018 -0400
+
+    servicio para la agencia
+
+[33mcommit e2bc913a3902255b87c50d02a704d1a2ce49f35f[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 07:46:30 2018 -0400
+
+    cambio del puerto
+
+[33mcommit fcb81a96a08533fb402a18498549f829057460d1[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Thu Oct 11 00:37:07 2018 -0400
+
+    insercion del URL para usar el servicio, para la obtencion de un paquete
+
+[33mcommit e8e30df6bf0fbabfa622b43634db374334c3b77a[m
+Author: GuidoCruz95 <guido_cruz_huanca@outlook.com>
+Date:   Wed Oct 10 17:22:12 2018 -0400
+
+    create a tourist destiny formulary created.
+
+[33mcommit 1558b61d9ee5371daa81e99ab686aeb65f334f54[m
+Author: GuidoCruz95 <guido_cruz_huanca@outlook.com>
+Date:   Wed Oct 10 15:44:56 2018 -0400
+
+    tourist destiny models created and html formulary
+
+[33mcommit 30dcab7f9dfb9faeba2d5f73b3769d09b392ccd1[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Oct 10 12:34:37 2018 -0400
+
+    implementacion del metodo obtener paquete, en los servicios, y el uso del metedo en el componente paquete-turistico
+
+[33mcommit 7dbcc7240c66f2382154324546b2fbeb2e1287dd[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Oct 10 11:23:51 2018 -0400
+
+    modificacion del servicion, para obtener un paquete, y añadimos la ruta paqueteTuristico
+
+[33mcommit 92c5f88714f3bc1485fef6b0377cabf3c62e48f7[m
+Author: GuidoCruz95 <guido_cruz_huanca@outlook.com>
+Date:   Wed Oct 10 10:37:53 2018 -0400
+
+    dependencies errors fixed.
+
+[33mcommit 66a8a43275a20656eef5a38795be61e5682c893e[m
+Author: unknown <denikin_santos@hotmail.com>
+Date:   Wed Oct 10 09:52:51 2018 -0400
+
+    creacion del componente paquete turistico
+
+[33mcommit 1af3b56c324c1ff787aafd9f39a55becda751878[m
+Merge: dfc9598 25465c2
+Author: AlRoBe <43440631+AlRoBe@users.noreply.github.com>
+Date:   Sat Oct 6 19:14:05 2018 -0400
+
+    Merge pull request #4 from AlRoBe/registrar-agencia-turistica
+    
+    creacion de la estructura para agencia
+
+[33mcommit 25465c290f94066e29d70c03798da7251e492c2f[m
+Author: Alfredo.RObles <alf.asper@gmail.com>
+Date:   Sat Oct 6 19:08:39 2018 -0400
+
+    creacion de la estructura para agencia
+
+[33mcommit dfc95987b90e0fbfea9ac73cdae470ab747f0935[m
+Merge: 7b3ab4a 094f5aa
+Author: AlRoBe <43440631+AlRoBe@users.noreply.github.com>
+Date:   Sat Oct 6 18:10:32 2018 -0400
+
+    Merge pull request #3 from AlRoBe/estructura
+    
+    dependencias innecesarias borradas
+
+[33mcommit 094f5aa4b1c1b97a2fe04b2484cb310ba01e49e6[m[33m ([m[1;31morigin/estructura[m[33m)[m
+Author: Alfredo.RObles <alf.asper@gmail.com>
+Date:   Sat Oct 6 17:33:00 2018 -0400
+
+    dependencias innecesariasborradas
+
+[33mcommit 7b3ab4a4e0ce0cac2e8d7d4444cd1cf5e794feae[m[33m ([m[1;31morigin/vistaDestinoTuristico[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Alfredo Robles Bernabe <alfredo.robles@fundacion-jala.org>
+Date:   Fri Sep 28 21:10:45 2018 -0400
+
+    initial commit
