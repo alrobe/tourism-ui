@@ -4,6 +4,7 @@ import { Observer} from 'rxjs';
 import { PackagesService } from '../../../services/packages.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Calificacion } from 'src/app/model/paqueteTuristico/calificacion';
+import { Servicio } from 'src/app/model/servicio';
 
 @Component({
   selector: 'app-paquete-turistico',
@@ -21,6 +22,15 @@ export class PaqueteTuristicoComponent implements OnInit {
     comentario:"",
     paqueteTuristicoId:0
   };
+  servicio:Servicio={
+    id:null,
+    nombre:"",
+    descripcion:"",
+    paqueteTuristicoId:0
+  };
+
+  edicionServs: boolean;
+  agregarServ: boolean;
 
   constructor(private _activatedRouter:ActivatedRoute,private _turismoService:PackagesService,private _router:Router) { }
   ngOnInit() {
@@ -88,6 +98,26 @@ export class PaqueteTuristicoComponent implements OnInit {
     //this._router.navigate(['/paquetes/paquetesBuscados/a']);
     this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
     this.ngOnInit();
+  }
+
+  accionServs()
+  {
+    this.edicionServs = !this.edicionServs;
+  }
+
+  crearServ()
+  {
+
+  }
+
+  editarServ()
+  {
+
+  }
+
+  eliminarServ()
+  {
+    
   }
   
 }

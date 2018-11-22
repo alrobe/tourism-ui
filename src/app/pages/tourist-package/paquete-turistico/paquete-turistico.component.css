@@ -27,3 +27,29 @@ textarea {
     margin-left: auto;
     margin-right: auto;
 }
+
+.servicios
+{
+    text-align: center;
+}
+
+.servicios button
+{
+    margin: 0px 3px;
+}
+
+.accionServ
+{
+    width: 120px;
+}
+
+.accionServ button
+{
+    margin: 0px 3px;
+    padding: 4px 10px;
+}
+
+#message-text
+{
+    width: 100%;
+}

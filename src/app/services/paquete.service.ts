@@ -133,12 +133,12 @@ export class PaqueteService {
 
   getServicios() {
     return [
-      {nombre:"servicio #1"},
-      {nombre:"servicio #2"},
-      {nombre:"servicio #3"},
-      {nombre:"servicio #4"},
-      {nombre:"servicio #5"},
-      {nombre:"servicio #6"},
+      {nombre:"servicio #1", descripcion:"-----"},
+      {nombre:"servicio #2", descripcion:"-----"},
+      {nombre:"servicio #3", descripcion:"-----"},
+      {nombre:"servicio #4", descripcion:"-----"},
+      {nombre:"servicio #5", descripcion:"-----"},
+      {nombre:"servicio #6", descripcion:"-----"},
     ];
   }
 
