@@ -10,6 +10,7 @@ const API_URL_PACKAGES='http://localhost:8080/paquetes';
 const API_URL_COMENT="http://localhost:8080/calificacion";
 const API_URL_CSERV="http://localhost:8080/servicio";
 const API_URL_DSERV="http://localhost:8080/servicio/eliminar";
+const API_URL_UPSERV="http://localhost:8080/servicio/editar";
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,10 @@ export class PackagesService {
 
   deleteServicio(id:number):Observable<Servicio>{
     return this.httpClient.delete<Servicio>(`${API_URL_DSERV}/${id}`);
+  }
+
+  updateService(id: number, servicioToUpdate: Servicio): Observable<Servicio>
+  {
+    return this.httpClient.put<Servicio>(`${API_URL_UPSERV}/${id}`, servicioToUpdate);
   }
 }

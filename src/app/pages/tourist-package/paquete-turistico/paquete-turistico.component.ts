@@ -73,7 +73,7 @@ export class PaqueteTuristicoComponent implements OnInit {
     };
     this._turismoService.getPaquete(this.index)
     .subscribe(observador);
-
+    
   }
 
   promediarPuntuacion():void{
@@ -108,6 +108,7 @@ export class PaqueteTuristicoComponent implements OnInit {
     .subscribe(observador);
     this.ngOnInit();
     this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
+    this.ngOnInit();
   }
 
   accionServs()
@@ -133,11 +134,7 @@ export class PaqueteTuristicoComponent implements OnInit {
     .subscribe(observador);
     this.ngOnInit();
     this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
-  }
-
-  editarServ()
-  {
-
+    this.ngOnInit();
   }
 
   eliminarServ()
@@ -158,5 +155,6 @@ export class PaqueteTuristicoComponent implements OnInit {
     .subscribe(observador);
     this.ngOnInit();
     this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
+    this.ngOnInit();
   }
 }

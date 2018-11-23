@@ -47,6 +47,7 @@ textarea {
 {
     margin: 0px 3px;
     padding: 4px 10px;
+    width: 33px;
 }
 
 #message-text
