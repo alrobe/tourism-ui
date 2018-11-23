@@ -53,25 +53,27 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let servicio of paquete.servicios, index as i">
+                  <tr *ngFor="let serv of paquete.servicios, index as i">
                     <th scope="row">{{ i+1 }}</th>
-                    <th>{{ servicio.nombre }}</th>
-                    <td>{{ servicio.descripcion }}</td>
+                    <th>{{ serv.nombre }}</th>
+                    <td>{{ serv.descripcion }}</td>
                     <td class="accionServ" *ngIf="edicionServs">
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=true" (click)="editarServ()">V</button>
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarServ" (click)="eliminarServ()">X</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarServ" (click)="servAEliminar=(serv.id).valueOf()">X</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <div class="servicios">
                 <button (click)="accionServs()" class="btn btn-outline-primary"> <span *ngIf="!edicionServs">Administrar</span> <span *ngIf="edicionServs">Listo</span></button>
-                <button *ngIf="edicionServs" (click)="crearServ()" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=false">Agregar Nuevo</button>
+                <button *ngIf="edicionServs" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=false">Agregar Nuevo</button>
               </div>
               <br><br>
         </div>
 
-        <div class="modal fade" id="nuevoServ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Formulario de servicio -->
+        <form>
+            <div class="modal fade" id="nuevoServ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -84,22 +86,25 @@
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Nombre del Servicio:</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" [(ngModel)]="servicio.nombre" name="nombre">
                         </div>
                         <div class="form-group">
                           <label for="message-text" class="col-form-label">Descripción:</label>
-                          <textarea class="form-control" id="message-text"></textarea>
+                          <textarea class="form-control" id="message-text" rows="3" [(ngModel)]="servicio.descripcion" name="descripcion"></textarea>
                         </div>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-primary">Guardar</button>
+                      <button (click)=crearServ() type="button" class="btn btn-primary" data-dismiss="modal"> Guardar </button>
                     </div>
                   </div>
                 </div>
               </div>
-        
+            </form>
+            
+            <!-- Eliminación de Servicio -->
+            <form>
               <div class="modal fade" id="eliminarServ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -114,11 +119,12 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <button type="button" class="btn btn-primary">Eliminar</button>
+                          <button type="button" class="btn btn-primary" (click)="eliminarServ()" data-dismiss="modal">Eliminar</button>
                         </div>
                       </div>
                     </div>
                   </div>
+            </form>
 
         <br>
         <form (ngSubmit)="comentar()" #forma="ngForm">

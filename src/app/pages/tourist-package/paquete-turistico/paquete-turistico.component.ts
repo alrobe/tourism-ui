@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Paquete } from '../../../model/paqueteTuristico/paquete';
+import { Paquete } from '../../../model/paquete';
 import { Observer} from 'rxjs';
 import { PackagesService } from '../../../services/packages.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Calificacion } from 'src/app/model/paqueteTuristico/calificacion';
+import { Calificacion } from 'src/app/model/calificacion';
 import { Servicio } from 'src/app/model/servicio';
 
 @Component({
@@ -31,6 +31,7 @@ export class PaqueteTuristicoComponent implements OnInit {
 
   edicionServs: boolean;
   agregarServ: boolean;
+  servAEliminar: number = null;
 
   constructor(private _activatedRouter:ActivatedRoute,private _turismoService:PackagesService,private _router:Router) { }
   ngOnInit() {
@@ -44,6 +45,18 @@ export class PaqueteTuristicoComponent implements OnInit {
         this.index=params['id'];
       }
     );
+
+    this._activatedRouter.params.subscribe(
+      params => {
+        this.servicio.paqueteTuristicoId=params['id'];
+      }
+    );
+    this._activatedRouter.params.subscribe(
+      params => {
+        this.index=params['id'];
+      }
+    );
+
     let observador:Observer<Paquete>={
       next: (data) => {
         console.log(data);
@@ -61,7 +74,6 @@ export class PaqueteTuristicoComponent implements OnInit {
     this._turismoService.getPaquete(this.index)
     .subscribe(observador);
 
-    
   }
 
   promediarPuntuacion():void{
@@ -94,10 +106,8 @@ export class PaqueteTuristicoComponent implements OnInit {
       };
     this._turismoService.setComentario(this.calificacion)
     .subscribe(observador);
-    console.log(this.calificacion);
-    //this._router.navigate(['/paquetes/paquetesBuscados/a']);
-    this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
     this.ngOnInit();
+    this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
   }
 
   accionServs()
@@ -107,7 +117,22 @@ export class PaqueteTuristicoComponent implements OnInit {
 
   crearServ()
   {
+    let observador:Observer<Servicio>={
+      next: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.log('se produjo el siguiente error al repuerar la lista de los paquetes');
+      },
+      complete: () => {
+        console.log('proceso finalizado');
+      }
+    };
 
+    this._turismoService.setServicio(this.servicio)
+    .subscribe(observador);
+    this.ngOnInit();
+    this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
   }
 
   editarServ()
@@ -117,7 +142,21 @@ export class PaqueteTuristicoComponent implements OnInit {
 
   eliminarServ()
   {
-    
+    let observador:Observer<Servicio>={
+      next: (data) => {
+        console.log(data);
+      },
+      error: (error) => {
+        console.log('se produjo el siguiente error al repuerar la lista de los paquetes');
+      },
+      complete: () => {
+        console.log('proceso finalizado');
+      }
+    };
+
+    this._turismoService.deleteServicio(this.servAEliminar)
+    .subscribe(observador);
+    this.ngOnInit();
+    this._router.navigate(['/paquetes/paqueteTuristico',this.index]);
   }
-  
 }
