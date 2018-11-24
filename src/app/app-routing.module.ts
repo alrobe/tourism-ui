@@ -5,7 +5,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import {PaqueteTuristicoCreateComponent} from "./pages/paquete_turistico/paquete-turistico-create/paquete-turistico-create.component";
 import {PaqueteTuristicoEditComponent} from "./pages/paquete_turistico/paquete-turistico-edit/paquete-turistico-edit.component";
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
-
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
 
 const routes: Routes = [
   {
@@ -37,6 +37,12 @@ const routes: Routes = [
       { path: 'verDestinos', component: CircuitoVistaDestinosComponent}
     ]
   },
+  {
+    path: 'itinerario',
+    children: [
+      { path: 'ver/:id', component: ItinerarioComponent}
+    ]
+  }
 ]
 
 @NgModule({
