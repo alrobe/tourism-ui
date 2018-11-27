@@ -40,14 +40,14 @@ textarea {
 
 .accionServ
 {
-    width: 120px;
+    width: 180px;
 }
 
 .accionServ button
 {
     margin: 0px 3px;
     padding: 4px 10px;
-    width: 33px;
+    width: 75spx;
 }
 
 #message-text

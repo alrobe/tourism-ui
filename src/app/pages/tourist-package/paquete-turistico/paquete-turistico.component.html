@@ -58,8 +58,8 @@
                     <th>{{ serv.nombre }}</th>
                     <td>{{ serv.descripcion }}</td>
                     <td class="accionServ" *ngIf="edicionServs">
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=true" (click)="servicio.nombre=serv.nombre" (click)="servicio.descripcion=serv.descripcion" (click)="servicio.id=serv.id">e</button>
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarServ" (click)="servAEliminar=(serv.id).valueOf()">&times;</button>
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=true" (click)="servicio.nombre=serv.nombre" (click)="servicio.descripcion=serv.descripcion" (click)="servicio.id=serv.id">Editar</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarServ" (click)="servAEliminar=(serv.id).valueOf()">Eliminar</button>
                     </td>
                   </tr>
                 </tbody>
