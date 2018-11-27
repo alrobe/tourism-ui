@@ -15,6 +15,7 @@ import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/
 import { AgencyService } from './services/agency.service';
 import { TouristDestinyService } from './services/touristDestiny.service';
 import { PagerService } from './services/pager.service';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PagerService } from './services/pager.service';
     CreateDestinyComponent,
     PaqueteTuristicoCreateComponent,
     PaqueteTuristicoEditComponent,
-    CircuitoVistaDestinosComponent
+    CircuitoVistaDestinosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
