@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Itinerario } from '../model/itinerario';
-import { HttpClient } from '@angular/common/http';
-const API_URL_CIRCUIT='http://localhost:8080/itinerario/';
+
+const URL = 'http://localhost:8080/itinerarios';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
 export class ItinerarioService {
+
   constructor(private httpClient:HttpClient) { }
-  itinerarios = [1,2,3,4];
-  getItinerario(itinerarioId)
-  {
-    //return this.httpClient.get<Itinerario>("http://localhost:8080/itinerario/"+itinerarioId.toString());
-    return this.itinerarios[itinerarioId];
+
+  getItinerario(id: number) {
+    return this.httpClient.get<Itinerario>(`${URL}/${id}`, httpOptions);
   }
 }

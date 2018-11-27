@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: 'itinerario',
     children: [
-      { path: 'ver/:id', component: ItinerarioComponent}
+      { path: ':id', component: ItinerarioComponent}
     ]
   }
 ]

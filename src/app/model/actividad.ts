@@ -1,4 +1,4 @@
-export class Actividad{
+export class Actividad {
     id: number;
     nombre: String;
     descripcion: String;

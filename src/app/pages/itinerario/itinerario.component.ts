@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ItinerarioService } from 'src/app/services/itinerario.service';
 import { ActivatedRoute } from '@angular/router';
+import { ItinerarioService } from 'src/app/services/itinerario.service';
+import { Itinerario } from "../../model/itinerario";
 
 @Component({
   selector: 'app-itinerario',
@@ -11,17 +12,20 @@ export class ItinerarioComponent implements OnInit {
     
   itinerario$: Object;
   actividad$: string = "";
-  constructor(private itinerarioService: ItinerarioService, private route: ActivatedRoute) { 
-    this.route.params.subscribe( params => this.itinerario$ = params.id)
-  }
+  paquete: string = 'Paquete Turistico Fake';
+  model: Itinerario = new Itinerario();
+
+  constructor(private itinerarioService: ItinerarioService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    
-      /*this.itinerarioService.getItinerario(this.itinerario$).subscribe((data)=>{
-        this.itinerario$ = data;
-      });*/
-      this.itinerario$ = this.itinerarioService.getItinerario(this.itinerario$);
-      console.log(this.itinerario$);
+      this.itinerarioService.getItinerario(+this.route.snapshot.params.id).subscribe(
+        response => {
+          this.model = response;
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   show(actividad)
