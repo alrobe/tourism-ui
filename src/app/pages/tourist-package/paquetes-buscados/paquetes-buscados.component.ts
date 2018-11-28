@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackagesService } from '../../../services/packages.service';
-import { Paquete } from '../../../model/paqueteTuristico/paquete';
+import { Paquete } from '../../../model/paquete';
 import { Observer } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 
