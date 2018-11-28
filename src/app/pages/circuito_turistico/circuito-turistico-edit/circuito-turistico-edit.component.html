@@ -1,0 +1,115 @@
+<div class="container">
+
+  <div class="row" *ngIf="visibleAlert">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="alert alert-success mb-0 mt-2" role="alert">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="card mt-4">
+        <div class="card-header">
+          Editar Circuito Turistico
+          <button type="button" class="btn btn-danger float-right" (click)="delete()">X</button>
+        </div>
+        <div class="card-body">
+          <form class="form-horizontal"
+                (ngSubmit)="heroForm.form.valid && onSubmit()"
+                #heroForm="ngForm"
+                novalidate autocomplete="off">
+
+            <div class="form-group">
+              <!--<label for="nombre">Nombre</label>-->
+              <input type="text"
+                     class="form-control"
+                     id="nombre"
+                     name="nombre"
+                     [(ngModel)]="model.nombre"
+                     #nombre = "ngModel"
+                     [ngClass]="{'is-invalid':heroForm.submitted && nombre.invalid}"
+                     placeholder="Nombre Circuito Turistico"
+                     minlength="4" maxlength="100"
+                     required>
+              <div class="invalid-feedback">
+                <div>Campo requerido</div>
+              </div>
+            </div>
+            <!--data-toggle="modal" data-target="#showModal"-->
+            <div class="card mb-4">
+              <div class="card-header">
+                Destinos Turisticos
+                <button type="button"
+                        id="modalDe"
+                        data-toggle="modal" data-target="#showModal"
+                        (click)="showBeforeModal($event)"
+                        class="btn btn-outline-success btn-sm float-right">+</button>
+              </div>
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item"
+                    *ngFor="let destino of destinos; index as i">
+                  <div>
+                    <div class="float-left">
+                      {{ destino.nombre }}
+                    </div>
+                    <div class="float-right">
+                      <button (click)="deleteDestino(i)"
+                              class="btn btn-outline-danger btn-sm">X</button>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+              <div class="card-body" *ngIf="destinos?.length == 0">
+                  No hay Destinos asociados.
+              </div>
+            </div>
+
+            <div class="float-right">
+              <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
+              <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Destinos Turisticos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" *ngFor="let destino of allDestinos; index as i">
+                <div>
+                  <div class="float-left">
+                    {{ destino.nombre }}
+                  </div>
+                  <div class="float-right">
+                    <button (click)="addDestino(i)"
+                            class="btn btn-outline-success btn-sm">+</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+          <!--<button type="button" class="btn btn-primary">guardar</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
