@@ -6,6 +6,7 @@ import {PaqueteTuristicoCreateComponent} from "./pages/paquete_turistico/paquete
 import {PaqueteTuristicoEditComponent} from "./pages/paquete_turistico/paquete-turistico-edit/paquete-turistico-edit.component";
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
 
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,12 @@ const routes: Routes = [
     path: 'circuito/:id',
     children: [
       { path: 'verDestinos', component: CircuitoVistaDestinosComponent}
+    ]
+  },
+  {
+    path: '',
+    children: [
+      { path: 'home', component: HomeComponent}
     ]
   },
 ]
