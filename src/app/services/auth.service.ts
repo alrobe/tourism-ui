@@ -4,11 +4,15 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import * as auth0 from 'auth0-js';
+import { HttpClient } from '@angular/common/http';
+import { AuthUser } from './../model/auth-user';
 
 (window as any).global = window;
 
 @Injectable()
 export class AuthService {
+
+  baseUrl: string = 'http://localhost:8080/agency';
 
   auth0 = new auth0.WebAuth({
     clientID: 'jLlyx4GR5v2kARPNI4se7XqfpIbzhYLy',
@@ -18,7 +22,7 @@ export class AuthService {
     scope: 'openid'
   });
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, private http: HttpClient) {}
 
   public login(): void {
     this.auth0.authorize();
@@ -59,5 +63,16 @@ export class AuthService {
     // Access Token's expiry time
     const expiresAt = JSON.parse(localStorage.getItem('expires_at') || '{}');
     return new Date().getTime() < expiresAt;
+  }
+
+  public createAcount(email: string, password: string) {
+    var body = {
+      "client_id": "jLlyx4GR5v2kARPNI4se7XqfpIbzhYLy",
+      "email": email,
+      "password": password,
+      "connection": "Username-Password-Authentication",
+      "user_metadata": { plan: 'silver', team_id: 'a111' }
+    };
+    this.http.post("https://santos-denikin.auth0.com/dbconnections/signup", body).toPromise();
   }
 }

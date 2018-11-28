@@ -22,6 +22,16 @@
             </div>
         </div>
         <div class="form-group">
+            <label>Pagina web</label>
+            <input type="text" class="form-control" formControlName="agencyWebPage">
+            <div *ngIf="agencyForm.controls.agencyWebPage.invalid 
+            && (agencyForm.controls.agencyWebPage.dirty || agencyForm.controls.agencyWebPage.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.agencyWebPage.errors.required">
+                    La pagina web es requerida.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
             <label>Correo electronico</label>
             <input type="text" class="form-control" formControlName="agencyEmail">
             <div *ngIf="agencyForm.controls.agencyEmail.invalid 
@@ -35,12 +45,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Pagina web</label>
-            <input type="text" class="form-control" formControlName="agencyWebPage">
-            <div *ngIf="agencyForm.controls.agencyWebPage.invalid 
-            && (agencyForm.controls.agencyWebPage.dirty || agencyForm.controls.agencyWebPage.touched)" class="text-danger">
-                <p *ngIf="agencyForm.controls.agencyWebPage.errors.required">
-                    La pagina web es requerida.
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" formControlName="agencyPassword">
+            <div *ngIf="agencyForm.controls.agencyPassword.invalid 
+            && (agencyForm.controls.agencyPassword.dirty || agencyForm.controls.agencyPassword.touched)" class="text-danger">
+                <p *ngIf="agencyForm.controls.agencyPassword.errors.required">
+                    El password es requerido.
                 </p>
             </div>
         </div>
