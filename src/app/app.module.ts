@@ -16,6 +16,7 @@ import { AgencyService } from './services/agency.service';
 import { TouristDestinyService } from './services/touristDestiny.service';
 import { PagerService } from './services/pager.service';
 import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
+import { CircuitoTuristicoEditComponent } from './pages/circuito_turistico/circuito-turistico-edit/circuito-turistico-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
     PaqueteTuristicoCreateComponent,
     PaqueteTuristicoEditComponent,
     CircuitoVistaDestinosComponent,
-    ItinerarioComponent
+    ItinerarioComponent,
+    CircuitoTuristicoEditComponent
   ],
   imports: [
     BrowserModule,

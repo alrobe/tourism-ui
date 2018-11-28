@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AgencyService } from '../../../services/agency.service';
+import { AuthService } from '../../../services/auth.service';
 import {Agency} from '../../../model/agency';
 import { Person } from '../../../model/person';
 
@@ -14,7 +15,8 @@ export class RegisterAgencyComponent implements OnInit {
   agencyToSave: Agency;
   agencyForm: FormGroup;
   constructor(private fb: FormBuilder, 
-    private agencyService: AgencyService) { 
+    private agencyService: AgencyService, 
+    private authService: AuthService) { 
       this.agencyToSave = new Agency();
       this.agencyToSave.person = new Person();
     }
@@ -24,6 +26,7 @@ export class RegisterAgencyComponent implements OnInit {
       agencyName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
       agencyPhone: ['', Validators.required],
       agencyEmail: ['', [Validators.required, Validators.email]],
+      agencyPassword: ['', Validators.required],
       agencyWebPage: ['', Validators.required],
       representativeName: ['', Validators.required],
       representativeLastName: ['', Validators.required],
@@ -33,10 +36,14 @@ export class RegisterAgencyComponent implements OnInit {
   }
 
   saveAgency(){
+    var emailAgency = this.agencyForm.get('agencyEmail').value;
+    var passwordAgency = this.agencyForm.get('agencyPassword').value
+    this.authService.createAcount(emailAgency, passwordAgency);
     this.createAgencyModel();
     this.agencyService.createAgency(this.agencyToSave)
     .then(data => {
       this.agencyForm.reset();
+      this.authService.logout();
     });
   }
 

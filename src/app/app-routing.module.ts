@@ -6,12 +6,17 @@ import {PaqueteTuristicoCreateComponent} from "./pages/paquete_turistico/paquete
 import {PaqueteTuristicoEditComponent} from "./pages/paquete_turistico/paquete-turistico-edit/paquete-turistico-edit.component";
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
 import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
+import {CircuitoTuristicoEditComponent} from "./pages/circuito_turistico/circuito-turistico-edit/circuito-turistico-edit.component";
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: './pages/home/home.module#HomeModule'
   },
   {
     path: 'agency',
@@ -41,6 +46,12 @@ const routes: Routes = [
     path: 'itinerario',
     children: [
       { path: ':id', component: ItinerarioComponent}
+    ]
+  },
+  {
+    path: 'circuito-turistico',
+    children: [
+      { path: ':id/editar', component: CircuitoTuristicoEditComponent},
     ]
   }
 ]
