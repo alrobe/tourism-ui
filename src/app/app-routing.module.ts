@@ -14,6 +14,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    loadChildren: './pages/home/home.module#HomeModule'
+  },
+  {
     path: 'agency',
     loadChildren: './pages/agency/agency.module#AgencyModule'
   },
