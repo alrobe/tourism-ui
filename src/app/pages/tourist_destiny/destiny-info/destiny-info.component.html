@@ -1,0 +1,22 @@
+<div class="card card-cascade wider reverse">
+
+  <h1 class="text-center"><span>Detalle del Destino</span></h1>
+
+  <div class="back-button">
+    <button type="button" class="btn btn-primary" id="back" routerLink="../">Atras</button>
+  </div>
+  <div class="card-one">
+    <img src="../../../../assets/Lighthouse.jpg" alt="Card image cap">
+  </div>
+
+  <div class="card-body card-body-cascade text-center">
+    <h1 class="card-title"><strong>Destino: {{ destiny.name }}</strong></h1>
+    <h3 class="font-weight-bold-indigo-text py-2">Clima: {{ destiny.weather }}</h3>
+    <h5 class="font-weight-bold-indigo-text py-2">Pais: {{ destiny.country }}</h5>
+    <h5 class="font-weight-bold-indigo-text py-2">Departamento: {{ destiny.department }}</h5>
+    <h5 class="font-weight-bold-indigo-text py-2">Localidad: {{ destiny.locality }}</h5>
+    <h5 class="font-weight-bold-indigo-text py-2">Provincia: {{ destiny.province }}</h5>
+    <p class="card-text">{{ destiny.description }}</p>
+
+  </div>
+</div>

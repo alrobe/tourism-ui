@@ -5,7 +5,8 @@ import { AuthGuardService } from './services/auth-guard.service';
 import {PaqueteTuristicoCreateComponent} from "./pages/paquete_turistico/paquete-turistico-create/paquete-turistico-create.component";
 import {PaqueteTuristicoEditComponent} from "./pages/paquete_turistico/paquete-turistico-edit/paquete-turistico-edit.component";
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
-
+import { DestiniesComponent } from './pages/tourist_destiny/destinies/destinies.component';
+import { DestinyInfoComponent } from './pages/tourist_destiny/destiny-info/destiny-info.component';
 
 const routes: Routes = [
   {
@@ -22,9 +23,13 @@ const routes: Routes = [
     loadChildren: './pages/agency/agency.module#AgencyModule'
   },
   {
-    path: 'tourist-destiny',
+    path: 'destinies', component: DestiniesComponent,
+  },
+  {
+    path: 'destinies',
     children: [
-      { path: 'create', component: CreateDestinyComponent}
+      { path: 'create', component: CreateDestinyComponent },
+      { path: ':destinyId', component: DestinyInfoComponent },
     ]
   },
   { path: 'paquetes', loadChildren: './pages/tourist-package/tourist-package.module#TouristPackageModule', canActivate: [AuthGuardService] },

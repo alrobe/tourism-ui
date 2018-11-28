@@ -24,5 +24,13 @@ export class TouristDestinyService{
     deleteDestiny(id: String){
         return this.http.delete(this.baseUrl+'/'+id);
     }
+
+    getDestinyById(id: any) {
+        return this.http.get(this.baseUrl+'/'+id);
+    }
+
+    getAllDestinies() {
+        return this.http.get(this.baseUrl+"/all");
+    }
 }
 

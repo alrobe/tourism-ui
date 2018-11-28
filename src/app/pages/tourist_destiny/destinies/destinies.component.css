@@ -1,0 +1,78 @@
+h1 {
+    float: left;
+    width: 100%;
+    color: #232323;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+h1 span {
+    display: block;
+    text-transform: none;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#more {
+    margin-left: 80px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.details-card {
+    background: #ecf0f1;
+}
+
+.card-content {
+    background: #ffffff;
+    border: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    display: -webkit-inline-box;
+    padding-bottom: 10px;
+}
+
+.card-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    z-index: 1;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.card-desc {
+    padding: 1.25rem;
+}
+
+.card-desc h3 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.card-desc p {
+    color: #747373;
+    font-size: 14px;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 10px;
+}

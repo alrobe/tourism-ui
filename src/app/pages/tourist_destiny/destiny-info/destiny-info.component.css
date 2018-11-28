@@ -1,0 +1,43 @@
+h1 {
+    float: left;
+    width: 100%;
+    color: #232323;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+h1 span {
+    display: block;
+    text-transform: none;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.card-one {
+    margin: auto;
+}
+
+img {
+    height: 500px;
+    width: 1000px;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+p {
+    max-width: 70%;
+    margin: auto;
+}
+
+.back-button {
+    float: left;
+    padding-left: 1230px;
+}
+
+#back {
+    border-color: #ffffff;
+    background: #747373;
+}

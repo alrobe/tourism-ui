@@ -1,0 +1,27 @@
+<section class="details-card">
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center"><span>Destinos Turisticos</span>Destinos</h1>
+
+      <div class="col-md-4">
+        <ul>
+          <li *ngFor="let destiny of destinies">
+            <div class="card-content">
+              <div class="card-img">
+                <img src="assets/images/{{destiny.destinyId}}.jpg"  alt="Img">
+              </div>
+
+              <div class="card-desc">
+                <h3>{{ destiny.name }}</h3>
+                <p>Clima: {{ destiny.weather }}</p>
+                <p>Pais: {{ destiny.department }}</p>
+              </div>
+              <button type="button" (click)="redirectPage(destiny.destinyId)" class="btn btn-success" id="more">Ver mas</button>
+              <button type="button" (click)="deleteDestiny(destiny.destinyId)" class="btn btn-danger">Eliminar</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
