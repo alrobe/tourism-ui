@@ -33,8 +33,7 @@ export class CircuitoService {
   }
 
   deleteCircuitoTuristico(id: number) {
-    console.log('eliminando desde el service');
-    // return this.httpClient.delete(`${URL}/circuitos-turisticos/${id}`, httpOptions);
+    return this.httpClient.delete(`${URL}/circuitos-turisticos/${id}`, httpOptions);
   }
 
   updateCircuitoTuristico(id: number, circuito: Circuito): Observable<any> {

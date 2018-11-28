@@ -84,15 +84,19 @@ export class CircuitoTuristicoEditComponent implements OnInit {
   }
 
   delete() {
-    this.serviceCircuito.deleteCircuitoTuristico(1);
-    // .subscribe(
-    //   response => {
-    //      console.log(response);
-    //   },
-    //   error => {
-    //    console.log(error);
-    //   }
-    // );
+    console.log(this.model.id);
+    this.serviceCircuito.deleteCircuitoTuristico(this.model.id).subscribe(
+      response => {
+            this.message = "Circuito turistico Eliminado correctamente";
+            this.visibleAlert = true;
+            setTimeout(() => {
+              this.router.navigate(['/']);
+            }, 2000);
+      },
+      error => {
+       console.log(error);
+      }
+    );
   }
 
   addDestino(id: number) {
