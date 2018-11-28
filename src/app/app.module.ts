@@ -15,6 +15,7 @@ import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/
 import { AgencyService } from './services/agency.service';
 import { TouristDestinyService } from './services/touristDestiny.service';
 import { PagerService } from './services/pager.service';
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
 import { CircuitoTuristicoEditComponent } from './pages/circuito_turistico/circuito-turistico-edit/circuito-turistico-edit.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CircuitoTuristicoEditComponent } from './pages/circuito_turistico/circu
     PaqueteTuristicoCreateComponent,
     PaqueteTuristicoEditComponent,
     CircuitoVistaDestinosComponent,
+    ItinerarioComponent,
     CircuitoTuristicoEditComponent
   ],
   imports: [

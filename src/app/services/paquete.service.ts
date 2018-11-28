@@ -155,7 +155,7 @@ export class PaqueteService {
   getItinerario() {
     //new Date().toJSON().slice(0, 10)
     //new Date().toJSON().slice(11, 20)
-    return {nombre:"itinerario", fechaInicio:"2018-10-25",fechaFin:"2018-10-29",horaInicio:"16:05:00",horaFin:"16:05:00"};
+    return {nombre:"itinerario", fechaInicio:"2018-10-25",fechaFin:"2018-10-29",horaInicio:"16:05:00",horaFin:"16:05:00", actividades:[]};
   }
 
   saveData(paquete: Paquete): Observable<Paquete> {
