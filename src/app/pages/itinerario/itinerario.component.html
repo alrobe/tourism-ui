@@ -12,7 +12,7 @@
             <thead>
             <tr>
               <th scope="col">Fecha</th>
-              <th scope="col">Hora Inicio</th>
+              <th scope="col" >Hora</th>
               <th scope="col">Nombre</th>
               <th scope="col">Descripcion</th>
             </tr>
@@ -21,7 +21,7 @@
 
               <tr *ngFor="let actividad of model.actividades">
                 <th scope="row">{{ actividad.fecha }}</th>
-                <td>{{ actividad.horaInicio }}</td>
+                <td>{{ actividad.horaInicio }} - {{actividad.horaFin}}</td>
                 <td>{{ actividad.nombre }}</td>
                 <td>{{ actividad.descripcion }}</td>
               </tr>
