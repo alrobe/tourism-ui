@@ -2,7 +2,7 @@
 
     <div class="card mb-3" *ngIf="paquete">
         <div class="card-header text-center">
-            <h5>{{paquete.nombre | uppercase}}</h5>
+            <h2>{{paquete.nombre | uppercase}}</h2>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide uk-responsive-height" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -31,22 +31,105 @@
             </a>
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{paquete.nombre}}</h5>
+            <h3 class="card-title">{{paquete.nombre}}</h3>
             <h5>Descripcion:</h5>
             <p class="card-text">{{paquete.descripcion}}</p>
-            <p class="card-text"><small class="text-muted"><h6>Precio: {{paquete.precio}}</h6></small></p>
+            <p class="card-text"><small class="text-muted"><h6>Precio: {{paquete.precio}} Bs</h6></small></p>
+            <h6 class="text-muted">Calificacion: {{promedioPuntuacion}}</h6>
+            <br>
+            <h3> Circuitos: </h3>
             <div>
                 <button *ngFor="let circuito of paquete.circuitos" type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/']">{{circuito.nombre}}</button>
             </div>
+            <br>
+            <h3> Servicios: </h3>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col" *ngIf="edicionServs">Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let serv of paquete.servicios, index as i">
+                    <th scope="row">{{ i+1 }}</th>
+                    <th>{{ serv.nombre }}</th>
+                    <td>{{ serv.descripcion }}</td>
+                    <td class="accionServ" *ngIf="edicionServs">
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=true" (click)="servicio.nombre=serv.nombre" (click)="servicio.descripcion=serv.descripcion" (click)="servicio.id=serv.id">Editar</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarServ" (click)="servAEliminar=(serv.id).valueOf()">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="servicios">
+                <button (click)="accionServs()" class="btn btn-outline-primary"> <span *ngIf="!edicionServs">Administrar</span> <span *ngIf="edicionServs" (click)=ngOnInit()>Listo</span></button>
+                <button *ngIf="edicionServs" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoServ" (click)="agregarServ=false" (click)="servicio.nombre=''" (click)="servicio.descripcion=''" (click)="servicio.id=null">Nuevo Servicio</button>
+              </div>
+              <br><br>
         </div>
 
-        <div>
-            <h6>Calificacion: {{promedioPuntuacion}}</h6>
+        <!-- Formulario de servicio -->
+        <form>
+            <div class="modal fade" id="nuevoServ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="nuevoServLabel"> <span *ngIf="!agregarServ">Nuevo Servicio</span> <span *ngIf="agregarServ">Edición de Servicio</span> </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Nombre del Servicio:</label>
+                          <input type="text" class="form-control" id="recipient-name" [(ngModel)]="servicio.nombre" name="nombre">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Descripción:</label>
+                          <textarea class="form-control" id="message-text" rows="3" [(ngModel)]="servicio.descripcion" name="descripcion" aria-required="false"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button (click)=crearServ() type="button" class="btn btn-primary" data-dismiss="modal"> Guardar </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            <!-- Eliminación de Servicio -->
+            <form>
+              <div class="modal fade" id="eliminarServ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="nuevoServLabel">Eliminación de Servicio</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          ¿Está seguro que desea eliminar este servicio?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-danger" (click)=eliminarServ() data-dismiss="modal">Eliminar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </form>
 
-        </div>
+        <br>
         <form (ngSubmit)="comentar()" #forma="ngForm">
             <div class="form-group">
-                <label for="exampleFormControlTextarea1"><h6>Comentar</h6></label>
+                <label for="exampleFormControlTextarea1"><h5>Comentar</h5></label>
                 <textarea [(ngModel)]="calificacion.comentario" name="comentario" placeholder="Comenta" class="form-control " id="exampleFormControlTextarea1 " rows="3" required></textarea>
             </div>
             <div class="form-check">

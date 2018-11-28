@@ -17,6 +17,8 @@ import { TouristDestinyService } from './services/touristDestiny.service';
 import { PagerService } from './services/pager.service';
 import { DestiniesComponent } from './pages/tourist_destiny/destinies/destinies.component';
 import { DestinyInfoComponent } from './pages/tourist_destiny/destiny-info/destiny-info.component';
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
+import { CircuitoTuristicoEditComponent } from './pages/circuito_turistico/circuito-turistico-edit/circuito-turistico-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { DestinyInfoComponent } from './pages/tourist_destiny/destiny-info/desti
     PaqueteTuristicoEditComponent,
     CircuitoVistaDestinosComponent,
     DestiniesComponent,
-    DestinyInfoComponent
+    DestinyInfoComponent,
+    ItinerarioComponent,
+    CircuitoTuristicoEditComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import {PaqueteTuristicoEditComponent} from "./pages/paquete_turistico/paquete-t
 import { CircuitoVistaDestinosComponent } from './pages/circuito-vista-destinos/circuito-vista-destinos.component';
 import { DestiniesComponent } from './pages/tourist_destiny/destinies/destinies.component';
 import { DestinyInfoComponent } from './pages/tourist_destiny/destiny-info/destiny-info.component';
+import { ItinerarioComponent } from './pages/itinerario/itinerario.component';
+import {CircuitoTuristicoEditComponent} from "./pages/circuito_turistico/circuito-turistico-edit/circuito-turistico-edit.component";
 
 const routes: Routes = [
   {
@@ -46,6 +48,18 @@ const routes: Routes = [
       { path: 'verDestinos', component: CircuitoVistaDestinosComponent}
     ]
   },
+  {
+    path: 'itinerario',
+    children: [
+      { path: ':id', component: ItinerarioComponent}
+    ]
+  },
+  {
+    path: 'circuito-turistico',
+    children: [
+      { path: ':id/editar', component: CircuitoTuristicoEditComponent},
+    ]
+  }
 ]
 
 @NgModule({
